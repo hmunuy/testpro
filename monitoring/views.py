@@ -29,7 +29,7 @@ def home(request):
         r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-        return render(request,'home.html',{ 'data' : data },{'username':username})
+        return render(request,'home.html',{ 'data' : data })
 
     
     else:
