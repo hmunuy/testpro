@@ -82,6 +82,7 @@
                                 <th>Name</th>
                                 <th>Status</th>
                                 <th>Uptime</th>
+                                <th>insert_time</th>
                             </tr>
                            
                         </thead>
@@ -90,6 +91,7 @@
                                 <th>Name</th>
                                 <th>Status</th>
                                 <th>Uptime</th>
+                                <th>insert_time</th>
                                
                             </tr>
                         </tfoot>
@@ -99,7 +101,7 @@
                                 <td>{{ qry.hostname }}</td>
                                 <td>{{ qry.description }}</td>
                                 <td>{{ qry.uptime }}</td>
-                               
+                                <td>{{ qry.insert_time }}</td>
                             </tr>
                             {% endfor %}
                             
