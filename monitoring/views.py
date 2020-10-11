@@ -41,13 +41,13 @@ def login(request):
         r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-        return render(request,'home.html',{'username':username})
+     return render(request,'home.html',{'username':username})
     
     else:
         msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
         r = requests.post(url, headers=headers , data = {'message':msg})
 
-        return render(request,'index.html',{'username':username})
+     return render(request,'index.html',{'username':username})
         
     
 
