@@ -21,7 +21,21 @@ def index(request):
     return render(request,'index.html')
 
 def home(request):
+    username = request.GET['username']
+    password = request.GET['password']
+    if ((username == 'admin') and  (password == 'admin'))  :
+        msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
+        r = requests.post(url, headers=headers , data = {'message':msg})
+      
+
+        return render(request,'home.html',{'username':username})
+    
+    else:
+        msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
+        r = requests.post(url, headers=headers , data = {'message':msg})
+        
     data = list(Host.objects.all())
+
     return render(request,'home.html',{ 'data' : data })
 
 def page2(request):
