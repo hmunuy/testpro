@@ -29,13 +29,13 @@ def home(request):
         r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-        return render(request,'home.html',{ 'data' : data })
+        return render(request,'home.html',{ 'data' : data },{'username':username})
 
     
     else:
         msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
         r = requests.post(url, headers=headers , data = {'message':msg})
-        return render(request,'home.html',{ 'data' : data })
+        return render(request,'index.html')
 
 def page2(request):
     return render(request,'page2.html')
