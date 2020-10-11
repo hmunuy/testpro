@@ -23,20 +23,20 @@ def home(request):
     #Qury Data Show on Table in home.html
     data = list(Host.objects.all())
     # Check Login
-    username = request.GET['username']
-    password = request.GET['password']
-    if ((username == 'admin') and  (password == 'admin'))  :
-        msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
-        r = requests.post(url, headers=headers , data = {'message':msg})
+    # username = request.GET['username']
+    # password = request.GET['password']
+    # if ((username == 'admin') and  (password == 'admin'))  :
+    #     msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
+    #     r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-        return render(request,'home.html',{ 'data' : data })
+    #     return render(request,'home.html',{ 'data' : data })
 
     
-    else:
-        msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
-        r = requests.post(url, headers=headers , data = {'message':msg})
-        return render(request,'index.html')
+    # else:
+    #     msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
+    #     r = requests.post(url, headers=headers , data = {'message':msg})
+    #     return render(request,'index.html')
 
 def page2(request):
     return render(request,'page2.html')
