@@ -21,7 +21,9 @@ def index(request):
     return render(request,'index.html')
 
 def home(request):
+    #Qury Data Show on Table in home.html
     data = list(Host.objects.all())
+    # Check Login
     username = request.GET['username']
     password = request.GET['password']
     if ((username == 'admin') and  (password == 'admin'))  :
