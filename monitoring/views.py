@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.template import loader
 from .models import Host
-from .models import test1
+
 import requests
 
 
