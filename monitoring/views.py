@@ -21,6 +21,7 @@ def index(request):
     return render(request,'index.html')
 
 def home(request):
+    data = list(Host.objects.all())
     username = request.GET['username']
     password = request.GET['password']
     if ((username == 'admin') and  (password == 'admin'))  :
@@ -28,15 +29,13 @@ def home(request):
         r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-        return render(request,'home.html',{'username':username})
+        return render(request,'home.html',{ 'data' : data })
+
     
     else:
         msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
         r = requests.post(url, headers=headers , data = {'message':msg})
-        
-    data = list(Host.objects.all())
-
-    return render(request,'home.html',{ 'data' : data })
+        return render(request,'home.html',{ 'data' : data })
 
 def page2(request):
     return render(request,'page2.html')
@@ -47,21 +46,21 @@ def page3(request):
 def report(request):
     return render(request,'report.html')
 
-def login(request):
-    username = request.GET['username']
-    password = request.GET['password']
-    if ((username == 'admin') and  (password == 'admin'))  :
-        msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
-        r = requests.post(url, headers=headers , data = {'message':msg})
+# def login(request):
+#     username = request.GET['username']
+#     password = request.GET['password']
+#     if ((username == 'admin') and  (password == 'admin'))  :
+#         msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
+#         r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-        return render(request,'home.html',{'username':username})
+#         return render(request,'home.html',{'username':username})
     
-    else:
-        msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
-        r = requests.post(url, headers=headers , data = {'message':msg})
+#     else:
+#         msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
+#         r = requests.post(url, headers=headers , data = {'message':msg})
 
-     return render(request,'index.html',{'username':username})
+#        return render(request,'index.html',{'username':username})
         
     
 
