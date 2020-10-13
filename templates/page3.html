@@ -1,5 +1,6 @@
 {% extends "main.html" %}
 {% block content %}
+{% load static %}
 <main>
     <div class="container-fluid">
         <h1 class="mt-4">Topology</h1>
@@ -19,7 +20,7 @@
             </div>
             <div class="card-body">
                 
-                <img src="{% static '/topology.png' %}" class="img-fluid" alt="Responsive image">
+                <img src="{% static "/topology.png" %}" class="img-fluid" alt="Responsive image">
             </div>
         </div>
     </div>
