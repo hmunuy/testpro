@@ -39,10 +39,12 @@
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                     <br>
                     <ul class="list-group" id="myList">
-                    <li class="list-group-item">First item</li>
-                    <li class="list-group-item">Second item</li>
-                    <li class="list-group-item">Third item</li>
-                    <li class="list-group-item">Fourth</li>
+                        {% for qry in data %} 
+                        
+                            <li class="list-group-item">{{ qry.hostname }}</li>
+                       
+                        {% endfor %}
+                   
                     </ul>  
                     </div>
                 </div>
