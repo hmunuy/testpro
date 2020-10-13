@@ -38,8 +38,8 @@
                 <div class="card bg-danger text-black mb-4">
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                     <br>
-                    <div class="table-responsive"></div>
-                    <ul class="list-group" id="myList">
+                    <div class="table-responsive">
+                    <ul class="list-group" id="myList" id="dataTable" cellspacing="0">
                         {% for qry in data %} 
                         
                             <li class="list-group-item">{{ qry.hostname }}</li>
