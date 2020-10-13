@@ -34,9 +34,18 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Danger Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
         </div>
          
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
@@ -46,25 +55,26 @@
                     <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                 </div>
             </div>
-            
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-bar mr-1"></i>
-                        Bar Chart Example
-                    </div>
-                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                </div>
-            </div>
-        </div>
+            <div class="container mt-3">
+                <h2>Filterable List</h2>
+                <p>Type something in the input field to search the list for specific items:</p>  
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                <br>
+                <ul class="list-group" id="myList">
+                  <li class="list-group-item">First item</li>
+                  <li class="list-group-item">Second item</li>
+                  <li class="list-group-item">Third item</li>
+                  <li class="list-group-item">Fourth</li>
+                </ul>  
+              </div>
          
         <div class="card mb-4">
-            <div class="card-header">
+            <!-- <div class="card-header">
                 <i class="fas fa-table mr-1"></i>
                 DataTable Example
             </div>
-            Table
-            <div class="card-body">
+            Table -->
+            <!-- <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
@@ -98,10 +108,10 @@
                             
                         </tbody>
                     </table>
-                </div> -->
-            <!-- </div> -->
+                </div>
+            </div> -->
             <!--End Table-->
-        <!-- </div> -->
+        </div>
     </div>
 </main>
 {% endblock %}
