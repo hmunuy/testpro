@@ -34,38 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-                <div class="card bg-danger text-black mb-4">
-                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                    <br>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    
-                                    <tr>
-                                        <th>Name</th>
-                                    
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    {% for qry in data %} 
-                                    <tr>
-                                        <td>{{ qry.hostname }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     
         
@@ -106,9 +75,9 @@
                 DataTable Example
             </div>
             Table -->
-             <div class="card-body">
+            <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="1">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             
                             <tr>
