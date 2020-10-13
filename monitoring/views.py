@@ -21,7 +21,7 @@ def index(request):
 
 def home(request):
     #Qury Data Show on Table in home.html
-    data = Host.objects.distinct()
+    data = list(Host.objects.all().distinct('description'))
     # Check Login
     # username = request.GET['username']
     # password = request.GET['password']
