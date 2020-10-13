@@ -5,7 +5,7 @@
         <h1 class="mt-4">Monitor</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="/home">Dashboard</a></li>
-            <li class="breadcrumb-item active">Monitor</li>
+            <li class="breadcrumb-item active">Charts</li>
         </ol>
         <div class="card mb-4">
             <div class="card-body">
@@ -26,59 +26,44 @@
         <div class="row">
             <div class="table-responsive">
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        
-                    </tr>
-                    <thead>
-                        <tbody>
-                           <tr>
-                                  <td>
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area mr-1"></i>
-                                        Chart Device1
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="50px" height="50px"></canvas></div>
-                                </div>
-                            </div>
-                                 </td>
-                                <td>
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area mr-1"></i>
-                                            Chart Device2
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart1" width="50px" height="50px"></canvas></div>
-                                </div>
-                            </td>
-                            </tr>
-                           
-                                <tr>
-                                <td>
-                                        <div class="card-header">
-                                            <i class="fas fa-chart-area mr-1"></i>
-                                                Chart Device3
-                                        </div>
-                                        <div class="card-body"><canvas id="myAreaChart2" width="50px" height="50px"></canvas></div>
-                                    </div>
-                                </div>
-                            </td>
-                             <td>
-                                <div class="col-xl-6">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            <i class="fas fa-chart-area mr-1"></i>
-                                                Chart Device4
-                                        </div>
-                                        <div class="card-body"><canvas id="myAreaChart3" width="50px" height="50px"></canvas></div>
-                                    </div>
-                                    </td>
-                               </tr>
-                         </tbody>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area mr-1"></i>
+                         Chart Device
                     </div>
-        
-                </table>
+                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area mr-1"></i>
+                            Chart Device
+                    </div>
+                    <div class="card-body"><canvas id="myAreaChart1" width="50%" height="20"></canvas></div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area mr-1"></i>
+                            Chart Device
+                    </div>
+                    <div class="card-body"><canvas id="myAreaChart2" width="50%" height="20"></canvas></div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area mr-1"></i>
+                            Chart Device
+                    </div>
+                    <div class="card-body"><canvas id="myAreaChart3" width="50%" height="20"></canvas></div>
+                </div>
+            </div>
+        </div>  
+        </div>
         </div>  
     </div>
 </main>
