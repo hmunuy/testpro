@@ -46,7 +46,7 @@ def page3(request):
 
 def report(request):
     data1 = list(Host.objects.all().distinct())
-    return render(request,'report.html')
+    return render(request,'report.html',{'data':data1})
 
 # def login(request):
 #     username = request.GET['username']
