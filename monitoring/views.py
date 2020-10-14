@@ -47,6 +47,9 @@ def page3(request):
 def page4(request):
     return render(request,'page4.html')
 
+def register(request):
+    return render(request,'register.html')
+
 def report(request):
     data1 = list(Host.objects.all().distinct())
     return render(request,'report.html',{'data':data1})
