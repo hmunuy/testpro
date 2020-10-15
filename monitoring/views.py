@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from django.template import loader
 from django.contrib.auth.models import User,auth
+from django.contrib import messages
 from .models import Host
 import requests
 
@@ -78,6 +79,7 @@ def addUser(request):
            last_name = lastname
            )
     user.save()
+    messages.info(request,'ลงทะเบียนสำเร็จ')
 
     return redirect('/')
 
