@@ -104,6 +104,8 @@ def login(request):
        return redirect('/home')
     else :
         messages.info(request,'ไม่พบข้อมูล')
+        msg = ("พยายามเข้าระบบ")
+        r = requests.post(url, headers=headers , data = {'message':msg})
         return redirect('/')
     
 
