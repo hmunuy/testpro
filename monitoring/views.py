@@ -57,8 +57,8 @@ def page4(request):
     return render(request,'page4.html')
 
 def register(request):
-    data = list(auth.objects.all().distinct())
-    return render(request,'register.html')
+    data = list(User.objects.all().distinct())
+    return render(request,'register.html',{'data':data})
 
 def report(request):
     data1 = list(Host.objects.all().distinct())
