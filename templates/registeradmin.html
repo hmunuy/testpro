@@ -23,7 +23,7 @@
                                 <div class="card-body">
                                   <!--FORM-->  
                                   <form action="/addForm" method="POST">
-                                       <!-- {% csrf_token %}  -->
+                                       {% csrf_token %} 
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">Username</label>
                                             <input class="form-control py-4" name="username"  id="inputEmailAddress" type="text" placeholder="Enter your username" />
