@@ -30,6 +30,7 @@ SECRET_KEY = 'jxk)q$9**x*d15c6@!mcryg^ihv()*+)ms0i-c%gs*a*&q_mwz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+APPEND_SLASH=False
 
 ALLOWED_HOSTS = ['fitm-monitoring.app.ruk-com.cloud']
 
