@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from django.template import loader
 from django.contrib.auth.models import User,auth
 from .models import Host
 import requests
+
 
 
 
@@ -94,7 +96,7 @@ def addUser(request):
            )
     user.save()
 
-    return render(request,'index.html')
+    return redirect('/')
 
 
 
