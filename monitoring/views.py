@@ -77,21 +77,21 @@ def logout(request):
     return render(request,'index.html')
 
 def addUser(request):
-    username = request.POST['username']
-    firstname = request.POST['firstname']
-    lastname = request.POST['lastname']
-    email = request.POST['email']
-    password = request.POST['password']
-    repassword = request.POST['repassword']
+    # username = request.POST['username']
+    # firstname = request.POST['firstname']
+    # lastname = request.POST['lastname']
+    # email = request.POST['email']
+    # password = request.POST['password']
+    # repassword = request.POST['repassword']
 
-    user =  User.objects.create_user(
-           username = username,
-           password = password,
-           email = email,
-           firstname = firstname,
-           lastname = lastname
-           )
-    user.save()
+    # user =  User.objects.create_user(
+    #        username = username,
+    #        password = password,
+    #        email = email,
+    #        firstname = firstname,
+    #        lastname = lastname
+    #        )
+    # user.save()
 
     return render(request,'index.html')
 
