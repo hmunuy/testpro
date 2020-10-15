@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.template import loader
+from django.contrib.auth.models import User
+from django.auth.models import User,auth
 from .models import Host
 import requests
 
@@ -18,6 +20,10 @@ headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'B
 
 def index(request):
     return render(request,'index.html')
+
+def registeradmin(request):
+    return render(request,'registeradmin.html')
+
 
 def home(request):
     #Qury Data Show on Table in home.html
@@ -54,21 +60,14 @@ def report(request):
     data1 = list(Host.objects.all().distinct())
     return render(request,'report.html',{'data':data1})
 
-# def login(request):
-#     username = request.GET['username']
-#     password = request.GET['password']
-#     if ((username == 'admin') and  (password == 'admin'))  :
-#         msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
-#         r = requests.post(url, headers=headers , data = {'message':msg})
-      
-
-#         return render(request,'home.html',{'username':username})
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
     
-#     else:
-#         msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
-#         r = requests.post(url, headers=headers , data = {'message':msg})
-
-#        return render(request,'index.html',{'username':username})
+    #login
+    user = auth.authentication(username = username,password = password)
+    
+    return render(request,'index.html',{'username':username})
         
     
 
@@ -77,5 +76,25 @@ def logout(request):
     r = requests.post(url, headers=headers , data = {'message':msg})
 
     return render(request,'index.html')
+
+def addForm(request):
+    username = request.POST['username']
+    firstname = request.POST['firstname']
+    lastname = request.POST['lastname']
+    email = request.POST['email']
+    password = request.POST['password']
+    repassword = request.POST['repassword']
+
+    user =  User.objects.create_user(
+           username = username,
+           password = password,
+           email = email,
+           firstname = firstname,
+           lastname = lastname
+           )
+    user.save()
+    
+    return render(request,'index.html')
+
 
 
