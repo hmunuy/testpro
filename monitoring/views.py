@@ -78,9 +78,10 @@ def addUser(request):
         elif User.objects.filter(email=email).exists():
             messages.info(request,'Email นี้เคยลงทะเบียนแล้ว')
             return redirect('/addForm')
-        elif User.objects.filter(username=username).exists():
-            messages.info(request,'username นี้เคยลงทะเบียนแล้ว')
-            return redirect('/addForm')
+    elif password!=repassword :
+         messages.info(request,'รหัสผ่านไม่ตรงกัน')
+         return redirect('/addForm')
+        
     else :
         user =  User.objects.create_user(
             username = username,
