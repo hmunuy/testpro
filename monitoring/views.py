@@ -105,10 +105,12 @@ def login(request):
     user=auth.authenticate(username=username,password=password)
 
     if user is not None :
+       request.session.set_expiry(86400)
        auth.login(request,user)
+       user_send = user.username
        msg = ("เข้าระบบโดย :"+username)
        r = requests.post(url, headers=headers , data = {'message':msg})
-       return redirect('/home/',{'username':username})
+       return redirect('/home/',{'username':user_send})
     else :
         messages.info(request,'ไม่พบข้อมูล')
         msg = ("พยายามเข้าระบบโดย :"+username)
