@@ -20,10 +20,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="input-group mb-3">
+                        {% for data in auth %}
                         <div class="input-group-prepend">
                             <span class="input-group-text">Username</span>
                           </div>
-                          <input type="text" class="form-control" placeholder="First Name">
+                          <input type="text" class="form-control" placeholder="{{ data.username }}">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Person</span>
                         </div>
@@ -34,6 +35,7 @@
                           </div>
                           <input type="text" class="form-control" placeholder="First Name">
                     </div>
+                    {% endfor %}
                       
                       <br>  <br>
                       <button type="button" class="btn btn-dark">Edit</button>
