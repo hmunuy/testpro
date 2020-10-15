@@ -89,7 +89,7 @@ def login(request):
         msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
         r = requests.post(url, headers=headers , data = {'message':msg})
     
-    return render(request,'index.html',{'username':username})
+    return render(request,'index.html')
         
     
 
