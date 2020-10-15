@@ -62,23 +62,6 @@ def report(request):
     data1 = list(Host.objects.all().distinct())
     return render(request,'report.html',{'data':data1})
 
-# def login(request):
-#     username = request.POST['username']
-#     password = request.POST['password']
-    
-#     #login
-#     user = auth.authentication(username = username,password = password)
-    
-#     return render(request,'index.html',{'username':username})
-        
-    
-
-def logout(request):
-    msg = ("ออกจากระบบเเล้ว")
-    r = requests.post(url, headers=headers , data = {'message':msg})
-
-    return render(request,'index.html')
-
 def addUser(request):
     username = request.POST['username']
     firstname = request.POST['firstname']
@@ -97,6 +80,25 @@ def addUser(request):
     user.save()
 
     return redirect('/')
+
+# def login(request):
+#     username = request.POST['username']
+#     password = request.POST['password']
+    
+#     #login
+#     user = auth.authentication(username = username,password = password)
+    
+#     return render(request,'index.html',{'username':username})
+        
+    
+
+def logout(request):
+    msg = ("ออกจากระบบเเล้ว")
+    r = requests.post(url, headers=headers , data = {'message':msg})
+
+    return render(request,'index.html')
+
+
 
 
 
