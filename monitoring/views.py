@@ -88,8 +88,8 @@ def addForm(request):
            username = username,
            password = password,
            email = email,
-           firstname = first_name,
-           lastname = last_name
+           firstname = firstname,
+           lastname = lastname
            )
     user.save()
 
