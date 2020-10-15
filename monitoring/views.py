@@ -101,7 +101,7 @@ def login(request):
 
     if user is not None :
        auth.login(request,user)
-       return redirect('/home')
+       return redirect('/home/')
     else :
         messages.info(request,'ไม่พบข้อมูล')
         msg = ("พยายามเข้าระบบ")
