@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.template import loader
-# from django.contrib.auth.models import User
-# from django.auth.models import User,auth
+from django.contrib.auth.models import User
+from django.auth.models import User,auth
 from .models import Host
 import requests
 
@@ -77,24 +77,24 @@ def logout(request):
 
     return render(request,'index.html')
 
-# def addForm(request):
-#     username = request.POST['username']
-#     firstname = request.POST['firstname']
-#     lastname = request.POST['lastname']
-#     email = request.POST['email']
-#     password = request.POST['password']
-#     repassword = request.POST['repassword']
+def addForm(request):
+    username = request.POST['username']
+    firstname = request.POST['firstname']
+    lastname = request.POST['lastname']
+    email = request.POST['email']
+    password = request.POST['password']
+    repassword = request.POST['repassword']
 
-#     user =  User.objects.create_user(
-#            username = username,
-#            password = password,
-#            email = email,
-#            firstname = firstname,
-#            lastname = lastname
-#            )
-#     user.save()
+    user =  User.objects.create_user(
+           username = username,
+           password = password,
+           email = email,
+           firstname = firstname,
+           lastname = lastname
+           )
+    user.save()
 
-#     return render(request,'index.html')
+    return render(request,'index.html')
 
 
 
