@@ -74,8 +74,8 @@ def addUser(request):
            username = username,
            password = password,
            email = email,
-           firstname = firstname,
-           lastname = lastname
+           first_name = firstname,
+           last_name = lastname
            )
     user.save()
 
