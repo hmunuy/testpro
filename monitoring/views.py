@@ -71,17 +71,26 @@ def addUser(request):
     password = request.POST['password']
     repassword = request.POST['repassword']
 
-    user =  User.objects.create_user(
-           username = username,
-           password = password,
-           email = email,
-           first_name = firstname,
-           last_name = lastname
-           )
-    user.save()
-    messages.info(request,'ลงทะเบียนสำเร็จ')
-
-    return render(request,'registeradmin.html')
+    if password==repassword :
+        if User.objects.filter(username=username).exists():
+            messages.info(request,'UserName นีมีคนใช้แล้ว')
+            return redirect('/addForm')
+        elif User.objects.filter(email=email).exists():
+            messages.info(request,'Email นี้เคยลงทะเบียนแล้ว')
+            return redirect('/addForm')
+        elif User.objects.filter(username=username).exists():
+            messages.info(request,'username นี้เคยลงทะเบียนแล้ว')
+            return redirect('/addForm')
+    else :
+        user =  User.objects.create_user(
+            username = username,
+            password = password,
+            email = email,
+            first_name = firstname,
+            last_name = lastname
+            )
+        user.save()
+        return render(request,'registeradmin.html')
 
 def login(request):
     username = request.POST['username']
