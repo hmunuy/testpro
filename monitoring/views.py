@@ -64,22 +64,22 @@ def report(request):
     return render(request,'report.html',{'data':data1})
 
 def addUser(request):
-    username = request.POST['username']
-    firstname = request.POST['firstname']
-    lastname = request.POST['lastname']
-    email = request.POST['email']
-    password = request.POST['password']
-    repassword = request.POST['repassword']
+    # username = request.POST['username']
+    # firstname = request.POST['firstname']
+    # lastname = request.POST['lastname']
+    # email = request.POST['email']
+    # password = request.POST['password']
+    # repassword = request.POST['repassword']
 
-    user =  User.objects.create_user(
-           username = username,
-           password = password,
-           email = email,
-           first_name = firstname,
-           last_name = lastname
-           )
-    user.save()
-    messages.info(request,'ลงทะเบียนสำเร็จ')
+    # user =  User.objects.create_user(
+    #        username = username,
+    #        password = password,
+    #        email = email,
+    #        first_name = firstname,
+    #        last_name = lastname
+    #        )
+    # user.save()
+    # messages.info(request,'ลงทะเบียนสำเร็จ')
 
     return render(request,'registeradmin.html')
 
