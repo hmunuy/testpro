@@ -74,13 +74,13 @@ def addUser(request):
     if password==repassword :
         if User.objects.filter(username=username).exists():
             messages.info(request,'UserName นีมีคนใช้แล้ว')
-            return redirect('/addForm')
+            return redirect('/registeradmin')
         elif User.objects.filter(email=email).exists():
             messages.info(request,'Email นี้เคยลงทะเบียนแล้ว')
-            return redirect('/addForm')
+            return redirect('/registeradmin')
     elif password!=repassword :
          messages.info(request,'รหัสผ่านไม่ตรงกัน')
-         return redirect('/addForm')
+         return redirect('/registeradmin')
         
     else :
         user =  User.objects.create_user(
