@@ -82,14 +82,18 @@ def addUser(request):
     return redirect('/')
 
 def login(request):
-    # username = request.POST['username']
-    # password = request.POST['password']
+    username = request.POST['username']
+    password = request.POST['password']
 
-    # if ((username == 'admin') and  (password == 'admin'))  :
-    #     msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
-    #     r = requests.post(url, headers=headers , data = {'message':msg})
+    if ((username == 'admin') and  (password == 'admin'))  :
+        msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
+        r = requests.post(url, headers=headers , data = {'message':msg})
     
-    return render(request,'home.html')
+        return render(request,'home.html')
+    else:
+        msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
+        r = requests.post(url, headers=headers , data = {'message':msg})
+        return render(request,'index.html')
         
     
 
