@@ -58,10 +58,7 @@ def page4(request):
 
 def register(request):
     data = list(User.objects.all().distinct())
-    for data1 in list(User.objects.all().distinct())
-        username = data1.username
-    endfor
-    return render(request,'register.html',{'username':username})
+    return render(request,'register.html')
 
 def report(request):
     data1 = list(Host.objects.all().distinct())
