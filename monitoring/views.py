@@ -102,18 +102,20 @@ def login(request):
 
     if user is not None :
        auth.login(request,user)
+       msg = ("เข้าระบบโดย :"+username)
+       r = requests.post(url, headers=headers , data = {'message':msg})
        return redirect('/home/')
     else :
         messages.info(request,'ไม่พบข้อมูล')
-        msg = ("พยายามเข้าระบบ")
+        msg = ("พยายามเข้าระบบโดย :"+username)
         r = requests.post(url, headers=headers , data = {'message':msg})
         return redirect('/')
     
 
 def logout(request):
+    auth.logout(request)
     msg = ("ออกจากระบบเเล้ว")
     r = requests.post(url, headers=headers , data = {'message':msg})
-
     return render(request,'index.html')
 
 
