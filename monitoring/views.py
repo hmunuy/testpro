@@ -76,7 +76,7 @@ def logout(request):
 
     return render(request,'index.html')
 
-def addForm(request):
+def addUser(request):
     username = request.POST['username']
     firstname = request.POST['firstname']
     lastname = request.POST['lastname']
