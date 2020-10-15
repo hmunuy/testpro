@@ -57,6 +57,7 @@ def page4(request):
     return render(request,'page4.html')
 
 def register(request):
+    data = list(auth.objects.all().distinct())
     return render(request,'register.html')
 
 def report(request):
