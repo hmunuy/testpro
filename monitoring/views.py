@@ -96,16 +96,15 @@ def login(request):
     username = request.POST['username']
     password = request.POST['password']
 
-    if ((username == 'admin') and  (password == 'admin'))  :
-        msg = ("เข้าสู่ระบบ โดย คุณ :"+username)
-        r = requests.post(url, headers=headers , data = {'message':msg})
-    
-        return render(request,'home.html')
-    else:
-        msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
-        r = requests.post(url, headers=headers , data = {'message':msg})
-        return render(request,'index.html')
-        
+    #check username ,password
+    user=auth.authenticate(username=username,password=password)
+
+    if user is not None :
+       auth.login(request,user)
+       return redirect('/')
+    else :
+        messages.info(request,'ไม่พบข้อมูล')
+        return redirect('/loginForm')
     
 
 def logout(request):
