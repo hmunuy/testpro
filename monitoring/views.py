@@ -101,10 +101,10 @@ def login(request):
 
     if user is not None :
        auth.login(request,user)
-       return redirect('/')
+       return redirect('/home')
     else :
         messages.info(request,'ไม่พบข้อมูล')
-        return redirect('/loginForm')
+        return redirect('/')
     
 
 def logout(request):
