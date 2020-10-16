@@ -107,7 +107,7 @@ def login(request):
        user_send = user.username
        msg = ("เข้าระบบโดย :"+username)
        r = requests.post(url, headers=headers , data = {'message':msg})
-       return redirect('/home/',{'username':user_send})
+       return redirect('/home/',{'username':user_send},'/main/',{'username':user_send})
     else :
         messages.info(request,'ไม่พบข้อมูล')
         msg = ("พยายามเข้าระบบโดย :"+username)
