@@ -31,6 +31,13 @@ def registeradmin(request):
 def home(request):
     #Qury Data Show on Table in home.html
     data = list(Host.objects.all().distinct())
+    username = request.session.GET['username']
+    if username != username
+       return render(request,'index.html')
+    else:
+        return render(request,'registeradmin.html')
+           
+    
     # Check Login
     # username = request.GET['username']
     # password = request.GET['password']
@@ -52,7 +59,7 @@ def page2(request):
 
 def main1(request):
     if request.session.has_key('username'):
-       username = request.session['username']
+       username = request.session.GET['username']
        return render(request, 'home.html', {"username" : username})
     else:
        return render(request, 'index.html', {})
@@ -119,7 +126,7 @@ def login(request):
        request.session['username'] = username
        msg = ("เข้าระบบโดย :"+username)
        r = requests.post(url, headers=headers , data = {'message':msg})
-       return redirect('main1',{'username':username})
+       return redirect('home')
     else :
         messages.info(request,'ไม่พบข้อมูล')
         msg = ("พยายามเข้าระบบโดย :"+username)
