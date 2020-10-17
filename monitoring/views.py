@@ -52,7 +52,7 @@ def page2(request):
 
 def main(request):
     if request.session.has_key('username'):
-       user_send = request.session['username']
+       username = request.session['username']
        return render(request, 'main.html', {"username" : username})
     else:
        return render(request, 'index.html', {})
