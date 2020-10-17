@@ -33,9 +33,9 @@ def home(request):
     data = list(Host.objects.all().distinct())
     username = request.session['username']
     if username != "" :
-       return render(request,'home.html',{'username':username})
+       return render(request,'home.html',{'username':username},{'data':data})
     else:
-        return render(request,'registeradmin.html',{'data':data})
+        return render(request,'registeradmin.html')
            
     
     # Check Login
