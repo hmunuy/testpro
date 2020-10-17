@@ -34,7 +34,7 @@
                         <tbody>
                             {% for qry in data %} 
                             <tr>
-                                <td><input type="text" id="fname" name="fname" readonly value="{{ qry.username }}"></a></td>
+                                <td><input type="text" id="fname" name="fname" id="myURL" readonly value="{{ qry.username }}"></a></td>
                                 <td><input type="text" id="fname" name="fname" value="{{ qry.first_name }}"></td>
                                 <td><input type="text" id="fname" name="fname" value="{{ qry.last_name }}"></td>
                                 <td><input type="text" id="fname" name="fname" value="{{ qry.email }}"></td>
@@ -60,9 +60,7 @@
     <script> 
         function GFG_Run() { 
               
-            $('input').attr('readonly', false); 
-            document.getElementById("GFG_down").innerHTML  
-                    = "Read-Only attribute enabled"; 
+            document.getElementById("myURL").readOnly = true;
         } 
     </script>
 </main>
