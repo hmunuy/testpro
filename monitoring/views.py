@@ -24,8 +24,8 @@ def index(request):
     return render(request,'index.html')
 
 def registeradmin(request):
-    
-    return render(request,'registeradmin.html')
+    rusername = request.session['username']
+    return render(request,'registeradmin.html',{'username':username})
 
 
 def home(request):
@@ -69,10 +69,12 @@ def main1(request):
   
 
 def page3(request):
-    return render(request,'page3.html')
+    username = request.session['username']
+    return render(request,'page3.html',{'username':username})
 
 def page4(request):
-    return render(request,'page4.html')
+    username = request.session['username']
+    return render(request,'page4.html',{'username':username})
 
 def register(request):
     data = list(User.objects.all().distinct())
@@ -139,7 +141,6 @@ def logout(request):
     auth.logout(request)
     user_logout = request.session.get('username', None)
     current_expiry = request.session.get('username')
-    logout(request)
     if user_logout:
         request.session['username'] = user_logout
         if current_expiry:
