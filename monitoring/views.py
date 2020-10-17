@@ -31,8 +31,8 @@ def registeradmin(request):
 def home(request):
     #Qury Data Show on Table in home.html
     username = request.session['username']
+    data = list(Host.objects.all().distinct())
     if username != "" :
-       data = list(Host.objects.all().distinct())
        return render(request,'home.html',{'data':data})
     else:
         return render(request,'registeradmin.html')
@@ -55,12 +55,13 @@ def home(request):
     #     return render(request,'index.html')
 
 def page2(request):
-    return render(request,'page2.html')
+    username = request.session.GET['username']
+    return render(request,'page2.html',{'username':username})
 
 def main1(request):
     if request.session.has_key('username'):
        username = request.session.GET['username']
-       return render(request, 'home.html', {"username" : username})
+       return render(request, 'main.html', {"username" : username})
     else:
        return render(request, 'index.html', {})
     return render(request,'home.html')
