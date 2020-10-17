@@ -35,7 +35,7 @@ def home(request):
     if username != "" :
        return render(request,'home.html',{'username':username})
     else:
-        return render(request,'registeradmin.html')
+        return render(request,'registeradmin.html',{'data':data})
            
     
     # Check Login
