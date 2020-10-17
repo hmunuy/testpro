@@ -33,7 +33,7 @@ def home(request):
     data = list(Host.objects.all().distinct())
     username = request.session['username']
     if username != "" :
-       return render(request,'home.html',{'username':username})
+       return render(request,'home.html',{'username':data})
     else:
         return render(request,'registeradmin.html')
            
