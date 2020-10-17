@@ -50,6 +50,14 @@ def home(request):
 def page2(request):
     return render(request,'page2.html')
 
+def main(request):
+    if request.session.has_key('username'):
+       user_send = request.session['username']
+       return render(request, 'main.html', {"username" : username})
+    else:
+       return render(request, 'index.html', {})
+    return render(request,'home.html')
+
 def page3(request):
     return render(request,'page3.html')
 
@@ -108,7 +116,7 @@ def login(request):
        request.session['member_id'] = user_send
        msg = ("เข้าระบบโดย :"+username)
        r = requests.post(url, headers=headers , data = {'message':msg})
-       return redirect('/home/',{'username':username},'/main/',{'username':username})
+       return redirect('/main/',{'username':username})
     else :
         messages.info(request,'ไม่พบข้อมูล')
         msg = ("พยายามเข้าระบบโดย :"+username)
@@ -118,6 +126,7 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
+    del request.session['member_id']
     msg = ("ออกจากระบบเเล้ว")
     r = requests.post(url, headers=headers , data = {'message':msg})
     return render(request,'index.html')
