@@ -32,7 +32,7 @@ def home(request):
     #Qury Data Show on Table in home.html
     data = list(Host.objects.all().distinct())
     username = request.session.GET['username']
-    if username != username
+    if username != username :
        return render(request,'index.html')
     else:
         return render(request,'registeradmin.html')
