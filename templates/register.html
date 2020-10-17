@@ -18,25 +18,40 @@
                 Profile
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <!-- {% for data1 in data %} -->
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Username {{username}}</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="{{ username }}">
-                            <div class="input-group-prepend">
-                            <span class="input-group-text">Person</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="data1.first_name">
-                            <input type="text" class="form-control" placeholder="data1.last_name">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Email</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="data1.email">
-                        <!-- {% endfor %} -->
-                    </div>
-                    
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Uptime</th>
+                                <th>Insert Time</th>
+                            </tr>
+                           
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Uptime</th>
+                                <th>Insert Time</th>
+                               
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for qry in data %} 
+                            <tr>
+                                <td><a href="#">{{ qry.username }}</a></td>
+                                <td>{{ qry.first_name }}</td>
+                                <td>{{ qry.last_name }}</td>
+                                <td>{{ qry.email }}</td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
                       
                       <br>  <br>
                       <button type="button" class="btn btn-dark">Edit</button>
