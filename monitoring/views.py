@@ -136,7 +136,7 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    del request.session['member_id']
+    del request.session['username']
     msg = ("ออกจากระบบเเล้ว")
     r = requests.post(url, headers=headers , data = {'message':msg})
     return render(request,'index.html')
