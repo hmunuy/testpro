@@ -58,7 +58,7 @@ def main1(request):
        return render(request, 'index.html', {})
     return render(request,'home.html')
 
-def main2(request):
+
   
 
 def page3(request):
