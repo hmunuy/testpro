@@ -137,9 +137,15 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    del request.session['username']
-    msg = ("ออกจากระบบเเล้ว")
-    r = requests.post(url, headers=headers , data = {'message':msg})
+    user_logout = request.session.get('username', None)
+    current_expiry = request.session.get('username')
+    logout(request)
+    if user_logout:
+        request.session['username'] = user_logout
+        if current_expiry:
+           request.session['username'] = current_expiry
+           msg = ("ออกจากระบบเเล้ว")
+           r = requests.post(url, headers=headers , data = {'message':msg})
     return render(request,'index.html')
 
 
