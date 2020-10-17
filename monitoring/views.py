@@ -55,7 +55,7 @@ def home(request):
     #     return render(request,'index.html')
 
 def page2(request):
-    username = request.session.GET['username']
+    username = request.session['username']
     return render(request,'page2.html',{'username':username})
 
 def main1(request):
