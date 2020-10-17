@@ -105,6 +105,7 @@ def login(request):
        request.session.set_expiry(86400)
        auth.login(request,user)
        user_send = user.username
+       request.session['member_id'] = user_send
        msg = ("เข้าระบบโดย :"+username)
        r = requests.post(url, headers=headers , data = {'message':msg})
        return redirect('/home/',{'username':username},'/main/',{'username':username})
