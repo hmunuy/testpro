@@ -112,7 +112,7 @@ def login(request):
     if user is not None :
        request.session.set_expiry(86400)
        auth.login(request,user)
-       user_send = user.username
+       username = user.username
        request.session['username'] = username
        msg = ("เข้าระบบโดย :"+username)
        r = requests.post(url, headers=headers , data = {'message':msg})
