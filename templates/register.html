@@ -34,7 +34,7 @@
                         <tbody>
                             {% for qry in data %} 
                             <tr>
-                                <td><input type="text" id="fname" name="fname" id="myURL" readonly value="{{ qry.username }}"></a></td>
+                                <td><input type="text" id="fname" name="fname" id="text_id" readonly value="{{ qry.username }}"></a></td>
                                 <td><input type="text" id="fname" name="fname" value="{{ qry.first_name }}"></td>
                                 <td><input type="text" id="fname" name="fname" value="{{ qry.last_name }}"></td>
                                 <td><input type="text" id="fname" name="fname" value="{{ qry.email }}"></td>
@@ -46,7 +46,7 @@
                 </div>
                       
                       <br>  <br>
-                      <button type="button" class="btn btn-dark" onclick = "GFG_Run()">Edit</button>
+                      <button type="button" class="btn btn-dark" onclick = "myGeeks()">Edit</button>
                       <button type="button" class="btn btn-danger">Submit</button>
                      
                       
@@ -58,9 +58,11 @@
         </div>
     </div>
     <script> 
-        function GFG_Run() { 
-              
-            document.getElementById("myURL").readOnly = false;
+        function myGeeks() { 
+            var txt = document.getElementById("text_id").readOnly
+                    = false; 
+                     
+            document.getElementById("GFG").innerHTML = txt; 
         } 
     </script>
 </main>
