@@ -34,10 +34,10 @@
                         <tbody>
                             {% for qry in data %} 
                             <tr>
-                                <td><input type="text" id="fname" name="fname" placeholder="{{ qry.username }}"></a></td>
-                                <td>{{ qry.first_name }}</td>
-                                <td>{{ qry.last_name }}</td>
-                                <td>{{ qry.email }}</td>
+                                <td><input type="text" id="fname" name="fname" value="{{ qry.username }}"></a></td>
+                                <td><input type="text" id="fname" name="fname" value="{{ qry.first_name }}"></td>
+                                <td><input type="text" id="fname" name="fname" value="{{ qry.last_name }}"></td>
+                                <td><input type="text" id="fname" name="fname" value="{{ qry.email }}"></td>
                             </tr>
                             {% endfor %}
                             
