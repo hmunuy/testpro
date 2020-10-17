@@ -119,7 +119,7 @@ def login(request):
        request.session['username'] = username
        msg = ("เข้าระบบโดย :"+username)
        r = requests.post(url, headers=headers , data = {'message':msg})
-       return redirect('/main/',{'username':username})
+       return redirect('/main1/',{'username':username})
     else :
         messages.info(request,'ไม่พบข้อมูล')
         msg = ("พยายามเข้าระบบโดย :"+username)
