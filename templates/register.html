@@ -34,7 +34,7 @@
                         <tbody>
                             {% for qry in data %} 
                             <tr>
-                                <td><a href="#">{{ qry.username }}</a></td>
+                                <td><input type="text" id="fname" name="fname" placeholder="{{ qry.username }}"></a></td>
                                 <td>{{ qry.first_name }}</td>
                                 <td>{{ qry.last_name }}</td>
                                 <td>{{ qry.email }}</td>
