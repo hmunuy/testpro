@@ -107,15 +107,17 @@ def addUser(request):
          return redirect('/registeradmin/')
         
     else :
-        user =  User.objects.create_user(
-            username = username1,
-            password = password,
-            email = email,
-            first_name = firstname,
-            last_name = lastname
-            )
-        user.save()
-        
+        # user =  User.objects.create_user(
+        #     username = username1,
+        #     password = password,
+        #     email = email,
+        #     first_name = firstname,
+        #     last_name = lastname
+        #     )
+        # user.save()
+        print("HELLO")
+       
+        # return redirect('/registeradmin/')
 
 def login(request):
     username = request.POST['username']
