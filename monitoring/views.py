@@ -58,13 +58,16 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
-    if request.method == 'POST' and 'device' in request.POST:
-       device = request.POST['device']
-       if device is not None and device !='':
-          data = list(User.objects.filter(username=device).distinct())
-          return render(request,'monitor.html',{'data':data})
-       else:
-            pass
+    device = request.POST['device']
+    if device == '':
+        return render(request,'home.html')
+    # if request.method == 'POST' and 'device' in request.POST:
+    #    device = request.POST['device']
+    #    if device is not None and device !='':
+    #       data = list(User.objects.filter(username=device).distinct())
+    #       return render(request,'monitor.html',{'data':data})
+    #    else:
+    #         pass
 
 def main1(request):
     if request.session.has_key('username'):
