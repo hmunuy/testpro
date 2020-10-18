@@ -58,9 +58,7 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
-    if request.POST['device'] == '' :
-        device ='enter now'
-        return render(request,'monitor.html',{'device':device})
+    device = request.POST.get('device',False)
        
     
     
