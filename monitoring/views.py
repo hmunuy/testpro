@@ -104,8 +104,7 @@ def addUser(request):
             return redirect('/registeradmin/')
     elif password!=repassword :
          messages.info(request,'รหัสผ่านไม่ตรงกัน')
-         return redirect('/registeradmin/')
-        
+         return redirect('/registeradmin/')   
     else :
         # user =  User.objects.create_user(
         #     username = username1,
@@ -115,7 +114,7 @@ def addUser(request):
         #     last_name = lastname
         #     )
         # user.save()
-        print("HELLO")
+        pass
        
         # return redirect('/registeradmin/')
 
