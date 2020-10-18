@@ -64,6 +64,8 @@ def monitor(request):
         print(device)
         return render(request,'topology.html')
     except NameError:
+        print("Error")
+    else:
         return render(request,'home.html')
     
     # if request.method == 'POST' and 'device' in request.POST:
