@@ -16,3 +16,7 @@ class snmpdata(models.Model):
     
 class hostname(models.Model):
     hostname = models.CharField(max_length=200)
+
+
+
+

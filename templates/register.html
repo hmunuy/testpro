@@ -57,6 +57,23 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        $().ready(function myGeeks() {
+        
+        
+        $('#clicker').click(function() {
+            $('input').each(function() {
+                if ($(this).attr('disabled')) {
+                    $(this).removeAttr('disabled');
+                }
+                else {
+                    $(this).attr({
+                        'disabled': 'disabled'
+                    });
+                }
+            });
+        });
+        });
+        </script>
 </main>
 {% endblock %}

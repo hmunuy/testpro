@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from monitoring import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
@@ -31,4 +32,4 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('main1', views.main1, name='main1'),
     path('logout/', views.logout, name='logout')
-]
+] 
