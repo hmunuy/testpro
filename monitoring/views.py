@@ -58,7 +58,7 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
-    device = request.session['device']
+    device = request.POST['device']
     data = list(User.objects.filter(username=device).distinct())
     return render(request,'monitor.html',{'data':data})
 
