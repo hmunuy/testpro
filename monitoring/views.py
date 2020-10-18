@@ -107,7 +107,6 @@ def addUser(request):
          return redirect('/registeradmin/')
         
     else :
-        username_line = request.session['username']
         user =  User.objects.create_user(
             username = username,
             password = password,
