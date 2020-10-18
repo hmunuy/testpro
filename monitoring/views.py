@@ -58,10 +58,11 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
-    device =''
-    device = request.POST['device']
-    data = list(User.objects.filter(username=device).distinct())
-    return render(request,'monitor.html',{'data':data})
+    if request.method == 'POST' and 'device' in request.POST:
+       device = request.POST['device']
+       if device:
+          data = list(User.objects.filter(username=device).distinct())
+          return render(request,'monitor.html',{'data':data})
 
 def main1(request):
     if request.session.has_key('username'):
