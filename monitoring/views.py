@@ -24,8 +24,8 @@ def index(request):
     return render(request,'index.html')
 
 def registeradmin(request):
-    username = request.session['username']
-    return render(request,'registeradmin.html',{'username':username})
+    
+    return render(request,'registeradmin.html')
 
 
 def home(request):
