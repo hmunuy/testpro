@@ -89,6 +89,7 @@ def report(request):
     return render(request,'report.html',{'data':data1})
 
 def addUser(request):
+    username = request.session['username']
     username1 = request.POST['username']
     firstname = request.POST['firstname']
     lastname = request.POST['lastname']
@@ -112,6 +113,9 @@ def addUser(request):
                 last_name = lastname
                 )
             user.save()
+            messages.info(request,'ลงทะเบียนสำเร็จ')
+            msg = ("คุณ  :"+username1+" ถูกลงทะเบียนโดย : "+username+"เรียบร้อย")
+            r = requests.post(url, headers=headers , data = {'message':msg})
             return redirect('/registeradmin/')  
     else  :
          messages.info(request,'รหัสผ่านไม่ตรงกัน')
