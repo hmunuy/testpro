@@ -58,6 +58,7 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
+    return render(request,'monitor.html')
     # device = request.POST('device')
        
     # try:
