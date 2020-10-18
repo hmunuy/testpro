@@ -116,7 +116,7 @@ def addUser(request):
             last_name = lastname
             )
         user.save()
-        msg = ("คุณ :"+username_line+"ได้สร้างผู้ใช้เพิ่ม รายละเอียด :"+username+" "+firstname+" "+lastname+" "+email)
+        msg = ("คุณ :"+username_line)
         r = requests.post(url, headers=headers , data = {'message':msg})
         return render(request,'registeradmin.html')
 
