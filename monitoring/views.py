@@ -114,7 +114,7 @@ def addUser(request):
             last_name = lastname
             )
         user.save()
-        return render(request,'report.html')
+        return redirect('/registeradmin/')
         
        
         # return redirect('/registeradmin/')
