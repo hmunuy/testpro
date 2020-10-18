@@ -22,14 +22,18 @@
         <div class="form-group">
             <form action="/monitor"  method="POST"></form>
            
-                <label for="sel1">Select Device: </label>
-                <select class="form-control" name="device" id="device">
-                <option>admin</option>
-                <option>hmunuy</option>
-                <option>wan</option>
-                
+            <div class="input-group mb-3" name="serach" id="search">
+                <div class="input-group-prepend">
+                <select onchange="this.form.submit()" class="custom-select" name="search"id="search">
+                    <option selected>เลือกประเภท...</option>
+                    <option value="ยาง">ยาง</option>
+                    <option value="ผ้าเบรค">ผ้าเบรค</option>
+                    <option value="กรองน้ำมัน">กรองน้ำมัน</option>
                 </select>
-                <input type="submit" name="submit" value="Submit">
+
+                
+                </div>
+<input type="text" class="form-control" id="myInput" placeholder="Search for names..">
         </form>
           </div>
         <div class="row">
@@ -106,5 +110,15 @@
                 </div>
         </div>  
     </div>
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script>
 </main>
 {% endblock %}
