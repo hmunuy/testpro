@@ -58,9 +58,13 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
-    device = request.POST('device',False)
+    device = request.POST('device')
        
-    
+    try:
+        print(device)
+        return render(request,'topology.html')
+    except NameError:
+        return render(request,'home.html')
     
     # if request.method == 'POST' and 'device' in request.POST:
     #    device = request.POST['device']
