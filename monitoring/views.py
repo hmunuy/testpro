@@ -106,15 +106,16 @@ def addUser(request):
          messages.info(request,'รหัสผ่านไม่ตรงกัน')
          return redirect('/registeradmin/')   
     else :
-        # user =  User.objects.create_user(
-        #     username = username1,
-        #     password = password,
-        #     email = email,
-        #     first_name = firstname,
-        #     last_name = lastname
-        #     )
-        # user.save()
-        pass
+        user =  User.objects.create_user(
+            username = username1,
+            password = password,
+            email = email,
+            first_name = firstname,
+            last_name = lastname
+            )
+        user.save()
+        return render(request,'report.html')
+        
        
         # return redirect('/registeradmin/')
 
