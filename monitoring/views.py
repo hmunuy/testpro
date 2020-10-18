@@ -103,19 +103,20 @@ def addUser(request):
         elif User.objects.filter(email=email).exists():
             messages.info(request,'Email นี้เคยลงทะเบียนแล้ว')
             return redirect('/registeradmin/')
-    elif password!=repassword :
+        else :
+            user =  User.objects.create_user(
+                username = username1,
+                password = password,
+                email = email,
+                first_name = firstname,
+                last_name = lastname
+                )
+            user.save()
+            return HttpResponse('/registeradmin/')
+    else password!=repassword :
          messages.info(request,'รหัสผ่านไม่ตรงกัน')
          return redirect('/registeradmin/')   
-    else :
-        user =  User.objects.create_user(
-            username = username1,
-            password = password,
-            email = email,
-            first_name = firstname,
-            last_name = lastname
-            )
-        user.save()
-        return HttpResponse('/registeradmin/')
+    
         
        
         # return redirect('/registeradmin/')
