@@ -63,7 +63,7 @@ def monitor(request):
        if device is not None and device !='':
           data = list(User.objects.filter(username=device).distinct())
           return render(request,'monitor.html',{'data':data})
-        else:
+       else:
             pass
 
 def main1(request):
