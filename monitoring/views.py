@@ -58,7 +58,7 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
-    device = request.POST.get('device',False)
+    device = request.POST.dict.get('device',False)
        
     
     
