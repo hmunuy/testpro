@@ -107,6 +107,7 @@ def addUser(request):
          return redirect('/registeradmin/')
         
     else :
+        username_line = request.session['username']
         user =  User.objects.create_user(
             username = username,
             password = password,
@@ -115,6 +116,8 @@ def addUser(request):
             last_name = lastname
             )
         user.save()
+        msg = ("คุณ :"+username_line+"ได้สร้างผู้ใช้เพิ่ม รายละเอียด :"+username+" "+firstname+" "+lastname+" "+email)
+        r = requests.post(url, headers=headers , data = {'message':msg})
         return render(request,'registeradmin.html')
 
 def login(request):
