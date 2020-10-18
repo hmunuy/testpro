@@ -115,7 +115,7 @@ def addUser(request):
             last_name = lastname
             )
         user.save()
-        return render(request,'registeradmin.html')
+        return redirect('/register/')
 
 def login(request):
     username = request.POST['username']
