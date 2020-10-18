@@ -5,6 +5,7 @@ from django.template import loader
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Host
+from .models import snmpdata
 import requests
 from django.http import HttpResponse
 
@@ -57,6 +58,8 @@ def home(request):
 
 def monitor(request):
     username = request.session['username']
+    device = request.session['device']
+    data = list(snmpdata.objects.filter(username=device).distinct())
     return render(request,'monitor.html',{'username':username})
 
 def main1(request):
