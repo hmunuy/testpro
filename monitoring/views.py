@@ -113,7 +113,7 @@ def addUser(request):
                 )
             user.save()
             return HttpResponse('/registeradmin/')
-    else password!=repassword :
+    else  :
          messages.info(request,'รหัสผ่านไม่ตรงกัน')
          return redirect('/registeradmin/')   
     
