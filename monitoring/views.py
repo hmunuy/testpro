@@ -60,13 +60,13 @@ def monitor(request):
     username = request.session['username']
     device = request.POST('device')
        
-    try:
-        print(device)
-        return render(request,'topology.html')
-    except NameError:
-        print("Error")
-    else:
-        return render(request,'home.html')
+    # try:
+    #     print(device)
+    #     return render(request,'topology.html')
+    # except NameError:
+    #     print("Error")
+    # else:
+    #     return render(request,'home.html')
     
     # if request.method == 'POST' and 'device' in request.POST:
     #    device = request.POST['device']
