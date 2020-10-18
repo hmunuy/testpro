@@ -113,9 +113,9 @@ def addUser(request):
                 last_name = lastname
                 )
             user.save()
-            messages.info(request,'ลงทะเบียนสำเร็จ')
             msg = ("คุณ  :"+username1+" ถูกลงทะเบียนโดย : "+username+"เรียบร้อย")
             r = requests.post(url, headers=headers , data = {'message':msg})
+            messages.info(request,'ลงทะเบียนสำเร็จ')
             return redirect('/registeradmin/')  
     else  :
          messages.info(request,'รหัสผ่านไม่ตรงกัน')
