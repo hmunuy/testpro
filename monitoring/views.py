@@ -88,7 +88,7 @@ def report(request):
     return render(request,'report.html',{'data':data1})
 
 def addUser(request):
-    username = request.POST['username']
+    username1 = request.POST['username']
     firstname = request.POST['firstname']
     lastname = request.POST['lastname']
     email = request.POST['email']
@@ -96,7 +96,7 @@ def addUser(request):
     repassword = request.POST['repassword']
 
     if password==repassword :
-        if User.objects.filter(username=username).exists():
+        if User.objects.filter(username=username1).exists():
             messages.info(request,'UserName นีมีคนใช้แล้ว')
             return redirect('/registeradmin/')
         elif User.objects.filter(email=email).exists():
@@ -108,7 +108,7 @@ def addUser(request):
         
     else :
         user =  User.objects.create_user(
-            username = username,
+            username = username1,
             password = password,
             email = email,
             first_name = firstname,
