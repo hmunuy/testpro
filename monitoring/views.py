@@ -6,6 +6,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Host
 import requests
+from django.http import HttpResponse
 
 
 
@@ -114,7 +115,7 @@ def addUser(request):
             last_name = lastname
             )
         user.save()
-        return redirect('/registeradmin/')
+        return HttpResponse('/registeradmin/')
         
        
         # return redirect('/registeradmin/')
