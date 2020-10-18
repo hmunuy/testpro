@@ -115,8 +115,7 @@ def addUser(request):
             last_name = lastname
             )
         user.save()
-        messages.info(request,'ลงทะเบียนสำเร็จ')
-        return redirect('/registeradmin/')
+        
 
 def login(request):
     username = request.POST['username']
