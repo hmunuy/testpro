@@ -55,9 +55,9 @@ def home(request):
     #     r = requests.post(url, headers=headers , data = {'message':msg})
     #     return render(request,'index.html')
 
-def page2(request):
+def monitor(request):
     username = request.session['username']
-    return render(request,'page2.html',{'username':username})
+    return render(request,'monitor.html',{'username':username})
 
 def main1(request):
     if request.session.has_key('username'):
@@ -70,13 +70,13 @@ def main1(request):
 
   
 
-def page3(request):
+def topology(request):
     username = request.session['username']
-    return render(request,'page3.html',{'username':username})
+    return render(request,'topology.html',{'username':username})
 
-def page4(request):
+def infodevice(request):
     username = request.session['username']
-    return render(request,'page4.html',{'username':username})
+    return render(request,'infodevice.html',{'username':username})
 
 def register(request):
     username = request.session['username']
@@ -113,7 +113,7 @@ def addUser(request):
                 last_name = lastname
                 )
             user.save()
-            msg = ("คุณ  :"+username1+" ถูกลงทะเบียนโดย : "+username+"เรียบร้อย")
+            msg = ("คุณ : "+username1+" ถูกลงทะเบียนโดย : "+username+" เรียบร้อยกรุณาตรวจสอบ")
             r = requests.post(url, headers=headers , data = {'message':msg})
             messages.info(request,'ลงทะเบียนสำเร็จ')
             return redirect('/registeradmin/')  
