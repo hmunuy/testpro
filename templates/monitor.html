@@ -23,10 +23,10 @@
             <form action="/monitor" id="carform"></form>
                 <label for="sel1">Select Device:</label>
                 <select class="form-control" name="device" id="device">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+                <option>admin</option>
+                <option>hmunuy</option>
+                <option>wan</option>
+                
                 </select>
                 <input type="submit">
         </form>
@@ -68,7 +68,41 @@
                     <div class="card-body"><canvas id="myAreaChart3" width="100%" height="40"></canvas></div>
                 </div>
             </div>
-        
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Uptime</th>
+                                <th>Insert Time</th>
+                            </tr>
+                           
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Uptime</th>
+                                
+                               
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for qry in data %} 
+                            <tr>
+                                <td><a href="#">{{ qry.username }}</a></td>
+                                <td>{{ qry.last_name }}</td>
+                                <td>{{ qry.email }}</td>
+                               
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
         </div>  
     </div>
 </main>

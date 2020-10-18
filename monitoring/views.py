@@ -59,8 +59,8 @@ def home(request):
 def monitor(request):
     username = request.session['username']
     device = request.session['device']
-    data = list(snmpdata.objects.filter(username=device).distinct())
-    return render(request,'monitor.html',{'username':username})
+    data = list(User.objects.filter(username=device).distinct())
+    return render(request,'monitor.html',{'data':data})
 
 def main1(request):
     if request.session.has_key('username'):
