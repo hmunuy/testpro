@@ -78,11 +78,12 @@ def monitor(request):
     #         pass
 
 def wlc(request):
-    # butthon = request.POST['butthon']
-    # if butthon == 'butthon' :
-    #     num_wlc = 40
-    #     # wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
-    return render(request,'monitor.html')
+    butthon = request.POST['butthon']
+    if butthon == 'butthon' :
+        num_wlc = 40
+        return redirect('topology.html')
+    else : return redirect('monitor.html')
+
 
 def main1(request):
     if request.session.has_key('username'):
