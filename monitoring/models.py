@@ -10,7 +10,7 @@ class Host(models.Model):
     insert_time = models.CharField(max_length=200)
 
 class snmpdata(models.Model):
-    ip_hostname = models.CharField(max_length=200)
+    ip_hostname = models.CharField()
     hostname = models.CharField(max_length=200)
     interface_snmp = models.CharField(max_length=200)
     status_snmp = models.CharField(max_length=200)
