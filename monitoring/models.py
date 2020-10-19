@@ -9,7 +9,7 @@ class Host(models.Model):
     uptime = models.CharField(max_length=200)
     insert_time = models.CharField(max_length=200)
 
-class snmpdata(models.Model):
+class snmp_data(models.Model):
     ip_hostname = models.CharField(max_length=200)
     hostname = models.CharField(max_length=200)
     interface_snmp = models.CharField(max_length=200)
