@@ -49,12 +49,12 @@ def home(request):
     #     r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-def wlc(request):
-    butthon = request.POST['butthon']
-    if butthon == 'butthon' :
-        num_wlc = 40
-        # wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
-        return render(request,'monitor.html',{'wlc_data':num_wlc})
+# def wlc(request):
+#     butthon = request.POST['butthon']
+#     if butthon == 'butthon' :
+#         num_wlc = 40
+#         # wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
+#         return render(request,'monitor.html',{'wlc_data':num_wlc})
 
 
     
