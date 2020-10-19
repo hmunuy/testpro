@@ -55,7 +55,7 @@ def registeradmin(request):
 
 def monitor(request):
     username = request.session['username']
-    return render('monitor.html',{'username':username})
+    return render(request, 'monitor.html', {"username" : username})
    
     # device = request.POST('device')
        
