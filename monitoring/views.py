@@ -79,7 +79,7 @@ def wlc_ap(request):
     username = request.session['username']
     butthon = request.POST['butthon']
     if butthon == 'butthon' :
-        num_wlc = 40
+        num_wlc = 60
         return render(request, 'monitor.html',{"num_wlc" : num_wlc})
     else : return redirect('monitor.html')
 
