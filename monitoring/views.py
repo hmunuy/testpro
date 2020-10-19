@@ -5,6 +5,7 @@ from django.template import loader
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Host
+from .models import snmp_ap
 from .models import snmpdata
 import requests
 from django.http import HttpResponse
@@ -48,7 +49,10 @@ def home(request):
     #     r = requests.post(url, headers=headers , data = {'message':msg})
       
 
-    
+def wlc(request):
+    data = list(snmp_ap.objects.all().distinct())
+    return render(request,'monitor.html',{'data':data})
+
 
     
     # else:
