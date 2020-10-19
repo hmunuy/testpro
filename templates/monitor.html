@@ -98,6 +98,7 @@
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Uptime</th>
+                                <th>Uptime</th>
                                 
                                
                             </tr>
@@ -105,9 +106,10 @@
                         <tbody>
                             {% for qry in data %} 
                             <tr>
-                                <td><a href="#">{{ qry.username }}</a></td> -->
-                                <td>{{ qry.last_name }}</td>
-                                <td>{{ qry.email }}</td>
+                                <td><a href="#">{{ qry.ip_hostname }}</a></td> -->
+                                <td>{{ qry.hostname }}</td>
+                                <td>{{ qry.interface_snmp }}</td>
+                                <td>{{ qry.status_snmp }}</td>
                                
                             </tr>
                              {% endfor %}
