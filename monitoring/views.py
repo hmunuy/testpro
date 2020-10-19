@@ -79,7 +79,7 @@ def wlc_ap(request):
     username = request.session['username']
     butthon = request.POST['butthon']
     if butthon == 'butthon' :
-        num_wlc = list(snmp_ap.objects.order_by('id')[0])
+        num_wlc = list(snmp_ap.objects.last('id'))
         return render(request, 'monitor.html',{"num_wlc" : num_wlc})
     else : return redirect('monitor.html')
 
