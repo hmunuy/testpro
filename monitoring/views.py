@@ -57,8 +57,9 @@ def registeradmin(request):
 def monitor(request):
     username = request.session['username']
     data = list(snmp_data.objects.all().distinct())
+    data2 = list(snmp_ap.objects.all().distinct())
     if username != "" :
-       return render(request,'monitor.html',{'data':data})
+       return render(request,'home.html',{'data':data},{'data2':data2})
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
