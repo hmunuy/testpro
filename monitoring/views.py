@@ -76,6 +76,7 @@ def monitor(request):
     #         pass
 
 def wlc_ap(request):
+    username = request.session['username']
     butthon = request.POST['butthon']
     if butthon == 'butthon' :
         num_wlc = 40
