@@ -6,6 +6,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Host
 from .models import snmp_ap
+from .models import snmp_data
 # from .models import snmpdata
 import requests
 from django.http import HttpResponse
@@ -55,6 +56,11 @@ def registeradmin(request):
 
 def monitor(request):
     username = request.session['username']
+    data = list(snmp_data.objects.all().distinct())
+    if username != "" :
+       return render(request,'monitor.html',{'data':data})
+    else:
+        return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
    
     # device = request.POST('device')
