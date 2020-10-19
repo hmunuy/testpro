@@ -120,8 +120,8 @@ def infodevice(request):
 def topology_serach(request):
     username = request.session['username']
     serach = request.POST['serach']
-    if username != '' :
-        return redirect('/infodevice/')
+    if serach :
+        return redirect('/infodevice/',serach)
 
 def register(request):
     username = request.session['username']
