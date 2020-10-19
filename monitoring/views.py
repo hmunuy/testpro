@@ -112,9 +112,9 @@ def topology(request):
     #     return render(request,'/infodevice/',device)
     return render(request,'topology.html',{'username':username})
 
-def infodevice(request):
+def infodevice(request,serach):
     username = request.session['username']
-    device = request.get['serach']
+    device = serach
     return render(request,'infodevice.html',{'username':username})    
 
 def topology_serach(request):
