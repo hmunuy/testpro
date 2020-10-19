@@ -18,6 +18,10 @@ class snmpdata(models.Model):
 class hostname(models.Model):
     hostname = models.CharField(max_length=200)
 
+class snmp_ap(models.Model):
+    numuser_wlc = models.IntegerField(max_length=200)
+    insert_time = models.CharField(max_length=200)
+
 
 
 
