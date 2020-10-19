@@ -105,7 +105,7 @@ def main1(request):
 
 def topology(request):
     username = request.session['username']
-    serach = request.POST['serach']
+    serach = request.get['serach']
     if username != '' :
         return render(request,'home.html')
     
