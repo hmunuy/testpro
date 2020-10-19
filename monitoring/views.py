@@ -50,10 +50,11 @@ def home(request):
       
 
 def wlc(request):
-    num_wlc = 40
-    # wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
-    
-    return render(request,'monitor.html',{'wlc_data':num_wlc})
+    butthon = request.POST['butthon']
+    if butthon == 'butthon' :
+        num_wlc = 40
+        # wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
+        return render(request,'monitor.html',{'wlc_data':num_wlc})
 
 
     
