@@ -59,7 +59,7 @@ def monitor(request):
     data = list(snmp_data.objects.all().distinct())
     data2 = list(snmp_ap.objects.all().distinct())
     if username != "" :
-       return render(request,'home.html',{'data':data})
+       return render(request,'monitor.html',{'data':data})
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
