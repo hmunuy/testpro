@@ -6,7 +6,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Host
 from .models import snmp_ap
-from .models import snmpdata
+# from .models import snmpdata
 import requests
 from django.http import HttpResponse
 
