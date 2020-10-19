@@ -51,9 +51,9 @@ def home(request):
 
 def wlc(request):
     num_wlc = 40
-    wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
+    # wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
     
-    return render(request,'monitor.html',{'wlc_data':wlc_data})
+    return render(request,'monitor.html',{'wlc_data':num_wlc})
 
 
     
