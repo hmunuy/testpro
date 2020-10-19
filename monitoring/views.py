@@ -106,7 +106,7 @@ def main1(request):
 def topology(request):
     username = request.session['username']
     
-    if device =='' :
+    if request.POST['search'] =='' :
         device = request.POST['search']
         return render(request,'/infodevice/',device)
     return render(request,'topology.html',{'username':username})
