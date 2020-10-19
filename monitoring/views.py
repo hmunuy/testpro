@@ -105,10 +105,14 @@ def main1(request):
 
 def topology(request):
     username = request.session['username']
+    device = request.POST['search']
+    if device !='' :
+        return render(request,'/infodevice/',device)
     return render(request,'topology.html',{'username':username})
 
 def infodevice(request):
     username = request.session['username']
+    device = request.get['device']
     return render(request,'infodevice.html',{'username':username})
 
 def register(request):
