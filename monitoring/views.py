@@ -114,7 +114,7 @@ def topology(request):
 
 def topology_serach(request):
     username = request.session['username']
-    serach = request.get['serach']
+    serach = request.POST['serach']
     if username != '' :
         return render(request,'home.html')
 
