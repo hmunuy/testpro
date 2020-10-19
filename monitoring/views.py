@@ -82,7 +82,7 @@ def wlc(request):
     # if butthon == 'butthon' :
     #     num_wlc = 40
     #     # wlc_data = list(snmp_ap.objects.filter(numuser_wlc = num_wlc))
-        return render(request,'monitor.html')
+    return render(request,'monitor.html')
 
 def main1(request):
     if request.session.has_key('username'):
