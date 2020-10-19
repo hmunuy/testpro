@@ -105,6 +105,9 @@ def main1(request):
 
 def topology(request):
     username = request.session['username']
+    serach = request.POST['serach']
+    if username != '' :
+        return render(request,'home.html')
     
     # if request.POST['search'] =='' :
     #     device = request.POST['search']
