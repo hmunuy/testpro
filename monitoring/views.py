@@ -25,12 +25,6 @@ headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'B
 
 def index(request):
     return render(request,'index.html')
-
-def registeradmin(request):
-    
-    return render(request,'registeradmin.html')
-
-
 def home(request):
     #Qury Data Show on Table in home.html
     username = request.session['username']
@@ -55,9 +49,13 @@ def home(request):
     #     msg = ("มีการพยายามเข้าสู่ระบบ โดย คุณ :"+username)
     #     r = requests.post(url, headers=headers , data = {'message':msg})
     #     return render(request,'index.html')
+def registeradmin(request):
+    
+    return render(request,'registeradmin.html')
 
 def monitor(request):
     username = request.session['username']
+    return redirect('monitor.html',{'username':username})
    
     # device = request.POST('device')
        
