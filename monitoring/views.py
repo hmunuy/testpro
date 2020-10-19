@@ -112,17 +112,16 @@ def topology(request):
     #     return render(request,'/infodevice/',device)
     return render(request,'topology.html',{'username':username})
 
+def infodevice(request):
+    username = request.session['username']
+    device = request.get['serach']
+    return render(request,'infodevice.html',{'username':username})    
+
 def topology_serach(request):
     username = request.session['username']
     serach = request.POST['serach']
     if username != '' :
-        return redirect('/infodevice')
-
-
-def infodevice(request):
-    username = request.session['username']
-    device = request.get['serach']
-    return render(request,'infodevice.html',{'username':username})
+        return redirect('/infodevice/')
 
 def register(request):
     username = request.session['username']
