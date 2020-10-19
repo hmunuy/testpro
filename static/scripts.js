@@ -19,7 +19,10 @@
         e.preventDefault();
         $("body").toggleClass("sb-sidenav-toggled");
     });
+    
+    function showTutorial(name) {
+        document.myform.stage.value = name
+     }
 })(jQuery);
-function showTutorial(name) {
-    document.myform.stage.value = name
- }
+
+
