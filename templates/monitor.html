@@ -10,13 +10,16 @@
         <div class="card mb-4">
             <div class="card-body">
                 <!-- Red -->
+                <div class="input-group mb-3" name="serach" id="search">
+                    <div class="input-group-prepend">
                 <form action="/wlc"  method="POST">
                     {% csrf_token %}
-                    <button class="btn btn-primary" id="butthon" name="butthon" value="butthon" >Login</button>
+                    <button class="btn btn-primary" id="butthon" name="butthon" value="butthon" >Click Show User on Wireless </button>
                 </form>
-                <p>User on Wireless : </p>
                 <div class="progress">
                 <div class="progress-bar bg-danger" style="width:{{num_wlc}}%">{{num_wlc}}</div>
+                </div>
+                </div>
                 </div>
                 <br>
     
