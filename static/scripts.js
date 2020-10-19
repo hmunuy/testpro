@@ -20,3 +20,6 @@
         $("body").toggleClass("sb-sidenav-toggled");
     });
 })(jQuery);
+function showTutorial(name) {
+    document.myform.stage.value = name
+ }
