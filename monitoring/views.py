@@ -70,7 +70,7 @@ def monitor(request):
     sum_user = 0
     for qry in data2 :
         num_user = qry
-        sum_user = sum_user+num_user
+        sum_user = (sum_user + num_user)
     x_sum = str(sum_user)
         
     if username != "" :
