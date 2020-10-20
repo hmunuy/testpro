@@ -60,7 +60,7 @@ def monitor(request):
     data = list(snmp_data.objects.all().distinct())
     x_time = datetime.datetime.now()
     x_time_sum = x_time.strftime(' %A '+' %B '+' %Y '+' %H '+' %M ')
-    data2 = snmp_ap.objects.all().filter(insert_time=x_time_sum).order_by('-numuser_wlc').latest()
+    data2 = snmp_ap.objects.all().filter(insert_time=x_time_sum).order_by('-numuser_wlc').latest('numuser_wlc')
     if username != "" :
        return render(request,'monitor.html',{'data':data,'data2':data2})
     else:
