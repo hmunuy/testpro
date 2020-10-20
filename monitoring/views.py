@@ -30,11 +30,13 @@ def index(request):
 def home(request):
     #Qury Data Show on Table in home.html
     username = request.session['username']
-    data = list(Host.objects.all().distinct())
+    # data = list(Host.objects.all().distinct())
     # in_time = Host.objects.latest('insert_time')
     # data = Host.objects.all().filter(insert_time='in_time').order_by('-description')
+    data = Host.objects.values('hostname').distinct()
+    x = data.query
     if username != "" :
-       return render(request,'home.html',{'data':data})
+       return render(request,'home.html',{'data':x})
     else:
         return render(request,'registeradmin.html')
            
