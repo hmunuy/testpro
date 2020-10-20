@@ -68,7 +68,7 @@ def monitor(request):
     data2 = snmp_ap.objects.all()
     for qry in data2 :
         num = qry.numuser_wlc
-        sum_user = sum_user+num
+        sum_user = sum_user + num
     x_sum = sum_user
         
     if username != "" :
