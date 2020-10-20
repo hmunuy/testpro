@@ -36,7 +36,7 @@ def home(request):
     data = Host.objects.values('hostname').distinct()
     # x = data.query
     if username != "" :
-       return render(request,'home.html',{'data':[data]})
+       return render(request,'home.html',{'data':data})
     else:
         return render(request,'registeradmin.html')
            
