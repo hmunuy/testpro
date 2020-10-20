@@ -33,7 +33,7 @@ def home(request):
     # data = list(Host.objects.all().distinct())
     # in_time = Host.objects.latest('insert_time')
     # data = Host.objects.all().filter(insert_time='in_time').order_by('-description')
-    data = Host.objects.values('hostname','description').distinct()
+    data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
     # x = data.query
     if username != "" :
        return render(request,'home.html',{'data':data})
