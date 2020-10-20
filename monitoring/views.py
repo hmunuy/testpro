@@ -57,7 +57,7 @@ def registeradmin(request):
 def monitor(request):
     username = request.session['username']
     data = list(snmp_data.objects.all().distinct())
-    data2 = list(snmp_ap.objects.order_by('insert_time'))
+    data2 = list(snmp_ap.objects.order_by('insert_time')[0])
     if username != "" :
        return render(request,'monitor.html',{'data':data,'data2':data2})
     else:
