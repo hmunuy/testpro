@@ -70,8 +70,7 @@ def monitor(request):
         num=x.numuser_wlc
         sum_user = num+num
     x_sum = sum_user
-        break
-    
+        
     if username != "" :
        return render(request,'monitor.html',{'data':data,'data2':x_sum}) 
     else:
