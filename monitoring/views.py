@@ -34,9 +34,18 @@ def home(request):
     # in_time = Host.objects.latest('insert_time')
     # data = Host.objects.all().filter(insert_time='in_time').order_by('-description')
     data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
+    data2 = snmp_ap.objects.all()
+    
+    sum_user = 0
+    num_user = 0
+    for qry in data2 :
+        num_user = qry.numuser_wlc
+        sum_user = sum_user + num_user
+    x_sum = str(sum_user)
+    
     # x = data.query
     if username != "" :
-       return render(request,'home.html',{'data':data})
+       return render(request,'home.html',{'data':data,'data2':data2})
     else:
         return render(request,'registeradmin.html')
            
