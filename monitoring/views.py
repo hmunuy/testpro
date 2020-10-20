@@ -45,7 +45,7 @@ def home(request):
     
     # x = data.query
     if username != "" :
-       return render(request,'home.html',{'data':data,'data2':data2})
+       return render(request,'home.html',{'data':data,'data2':x_sum})
     else:
         return render(request,'registeradmin.html')
            
