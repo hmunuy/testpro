@@ -66,10 +66,11 @@ def monitor(request):
     # x_time_sum = x_time.strftime('%d:'+'%A:'+'%B:'+'%Y:'+'%H:'+'%M')
     # data2 = snmp_ap.objects.all().filter(insert_time=x_time_sum).order_by('-numuser_wlc')
     data2 = snmp_ap.objects.all()
-    # for qry in data2 :
-    #     num = qry.numuser_wlc
-    #     sum_user += num
-    # x_sum = sum_user
+    for qry in data2 :
+        sum_user = 0 
+        num = qry.numuser_wlc
+        sum_user += num
+    x_sum = sum_user
         
     if username != "" :
        return render(request,'monitor.html',{'data':data,'data2':data2}) 
