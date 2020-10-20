@@ -64,9 +64,9 @@ def monitor(request):
     data = snmp_data.objects.values('ip_hostname','hostname','interface_snmp','status_snmp').distinct()
     # x_time = datetime.datetime.now()
     # x_time_sum = x_time.strftime('%d:'+'%A:'+'%B:'+'%Y:'+'%H:'+'%M')
-    hostname = ['WLC_FITM1','WLC_FITM2','WLC_FITM3']
-    data2 = snmp_ap.objects.all().filter(hostname='WLC_FITM1').order_by('-id')
-    # data2 = snmp_ap.objects.all()
+    #hostname = ['WLC_FITM1','WLC_FITM2','WLC_FITM3']
+    #data2 = snmp_ap.objects.all().filter(hostname='WLC_FITM1').order_by('-id')
+    data2 = snmp_ap.objects.all()
     
     sum_user = 0
     num_user = 0
