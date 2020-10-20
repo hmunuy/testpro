@@ -62,8 +62,7 @@ def monitor(request):
     x_time_sum = x_time.strftime('%d:'+'%A:'+'%B:'+'%Y:'+'%H:'+'%M')
     data2 = snmp_ap.objects.all().filter(insert_time=x_time_sum).order_by('-numuser_wlc')
     if username != "" :
-       return render(request,'monitor.html',{'data':data,'data2':    data2 = snmp_ap.objects.all().filter(insert_time=x_time_sum).order_by('-numuser_wlc')
-})
+       return render(request,'monitor.html',{'data':data,'data2':data2}) 
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
