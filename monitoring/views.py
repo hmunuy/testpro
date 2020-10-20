@@ -67,7 +67,7 @@ def monitor(request):
     # data2 = snmp_ap.objects.all().filter(insert_time=x_time_sum).order_by('-numuser_wlc')
     data2 = snmp_ap.objects.all()
     for qry in data2 :
-        sum_user = 0 
+        sum_user = 30 
         num = qry.numuser_wlc
         sum_user += num
     x_sum = str(sum_user)
