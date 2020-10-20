@@ -53,6 +53,13 @@ class snmp_ap_report(models.Model):
     numuser_wlc = models.IntegerField()
     insert_time = models.CharField(max_length=200)
 
+#Show on Wwb Page
+class snmp_ap_ipmac(models.Model):
+    ip_hostname = models.CharField(max_length=200)
+    hostname = models.CharField(max_length=200)
+    numuser_wlc = models.IntegerField()
+    insert_time = models.CharField(max_length=200)
+
 
 
 
