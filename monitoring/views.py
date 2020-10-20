@@ -70,7 +70,7 @@ def monitor(request):
         sum_user = 0
         num = 0
         num = qry.numuser_wlc
-        sum_user = sum_user + num
+        sum_user += num
     x_sum = sum_user
         
     if username != "" :
