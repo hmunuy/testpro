@@ -141,7 +141,7 @@ def topology(request):
 
 def infodevice(request,serach):
     username = request.session['username']
-    device = serach
+    #device = serach
     return render(request,'infodevice.html',{'username':username})    
 
 def topology_serach(request):
@@ -150,7 +150,7 @@ def topology_serach(request):
     if serach :
     
         return redirect('/infodevice/',serach)
-    infodevice(serach)
+    #infodevice(serach)
 
 def register(request):
     username = request.session['username']
