@@ -72,7 +72,7 @@ def monitor(request):
     x_sum = sum_user
         
     if username != "" :
-       return render(request,'monitor.html',{'data':data,'data2':x_sum}) 
+       return render(request,'monitor.html',{'data':data,'data2':data2}) 
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
