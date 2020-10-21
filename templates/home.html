@@ -1,14 +1,14 @@
 {% extends "main.html" %}
 {% block content %}
 <main>
-    <style>
+    <!-- <style>
         div.ex3 {
   background-color: lightblue;
   height: 150;
   width: 250;  
   overflow-y: auto;
 }
-    </style>
+    </style> -->
     <div class="container-fluid">
         <h1 class="mt-4">Dashboard {{username}}</h1>
         <ol class="breadcrumb mb-4">
@@ -31,9 +31,9 @@
                     </div>
                 </div>
             </div>
-            <div class="ex3">
-                <div class="col-xl-4 col-md-6">
-                
+            
+            <div class="col-xl-4 col-md-6">
+                <div class="ex3">
                     <ul class="list-group">
                         {% for x in hostname %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
