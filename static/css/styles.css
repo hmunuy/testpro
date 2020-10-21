@@ -10251,7 +10251,7 @@ body {
 }
 div.ex3 {
   background-color: lightblue;
-  height: 200px;
-  width: 200px;  
+  height: 150;
+  width: 250;  
   overflow-y: auto;
 }
