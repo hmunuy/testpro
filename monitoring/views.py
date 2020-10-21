@@ -5,6 +5,7 @@ from django.template import loader
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Host
+from .models import hostname
 from .models import snmp_ap
 from .models import snmp_data
 import datetime
@@ -35,6 +36,7 @@ def home(request):
     # data = Host.objects.all().filter(insert_time='in_time').order_by('-description')
     data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
     data2 = snmp_ap.objects.all()
+    data3 = hostname.objects.all()
     
     sum_user = 0
     num_user = 0
@@ -45,7 +47,7 @@ def home(request):
     
     # x = data.query
     if username != "" :
-       return render(request,'home.html',{'data':data,'data2':x_sum})
+       return render(request,'home.html',{'data':data,'data2':x_sum,'hostname':hostname})
     else:
         return render(request,'registeradmin.html')
            
