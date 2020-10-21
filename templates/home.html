@@ -25,10 +25,10 @@
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">Device DOWN</div>
+                    <div class="card-body">Device</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         {% for x in hostname %}
-                           <a>{{x.ip_hostname}} : {{cpu_temp}} : {{ram_process}}</a>
+                           <a>{{x.ip_hostname}} : {{x.cpu_temp}} : {{x.ram_process}}</a><br>
                         {% endfor %}
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
