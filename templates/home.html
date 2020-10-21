@@ -25,14 +25,19 @@
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-danger text-white mb-4">
-                    <ul class="list-group">
-                        {% for x in hostname %}
-                        <li class="list-group-item">{{x.ip_hostname}} : {{x.cpu_temp}} : {{x.ram_process}}</li>
-                        {% endfor %}
-                       
-                        
-                      </ul>
                     
+                    <div class="card-body">Device</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <ul class="list-group">
+                            {% for x in hostname %}
+                            <li class="list-group-item">{{x.ip_hostname}} : {{x.cpu_temp}} : {{x.ram_process}}</li>
+                            {% endfor %}
+                           
+                            
+                          </ul>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
             </div>
            
         </div>
