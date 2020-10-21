@@ -10249,3 +10249,9 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
 }
+div.ex3 {
+  background-color: lightblue;
+  height: 40px;
+  width: 200px;  
+  overflow-y: auto;
+}
