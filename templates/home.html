@@ -116,24 +116,22 @@
                             <tfoot>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Uptime</th>
-                                    <th>Insert Time</th>
+                    
                                    
                                 </tr>
                             </tfoot>
                             <tbody>
-                                {% for x in hostname %}
+                            {% for x in hostname %}
                                 <tr>
                                     <td><ul class="list-group">
-                                        {% for x in hostname %}
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                               
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
                                             IP : {{x.hostname}}
                                         <span class="badge badge-primary badge-pill">Cpu : {{x.cpu_temp}}</span>
                                         <span class="badge badge-primary badge-pill">Ram : {{x.ram_process}}</span>
                                         </li></td>
                                 </tr>
-                                {% endfor %}
+                            {% endfor %}
                                 
                             </tbody>
                         </table>
