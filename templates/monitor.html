@@ -47,9 +47,9 @@
                 <div class="input-group-prepend">
                 <select onchange="this.form.submit()" class="custom-select" name="search"id="search">
                     <option selected>เลือกประเภท...</option>
-                    <option value="ยาง">ยาง</option>
-                    <option value="ผ้าเบรค">ผ้าเบรค</option>
-                    <option value="กรองน้ำมัน">กรองน้ำมัน</option>
+                    <option value="ยาง">1</option>
+                    <option value="ผ้าเบรค">2</option>
+                    <option value="กรองน้ำมัน">3</option>
                 </select>
 
                 
@@ -135,6 +135,51 @@
                     </table>
                 </div>
         </div>  
+        <!-- WLC-->
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable2" width="100%" cellspacing="0">
+                    <thead>
+                        
+                        <tr>
+                            <th>IP Address</th>
+                            <th>Hostname</th>
+                            <th>Interface</th>
+                            <th>Satus</th>
+                            <th>Insert Time</th>
+                        </tr>
+                       
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>IP Address</th>
+                            <th>Hostname</th>
+                            <th>Interface</th>
+                            <th>Satus</th>
+                            <th>Insert Time</th>
+                            
+                           
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for qry in data %} 
+                        <tr>
+                            <td><a href="#">{{ qry.ip_hostname }}</a></td>
+                            <td>{{ qry.hostname }}</td>
+                            <td>{{ qry.interface_snmp }}</td>
+                            <td>{{ qry.status_snmp }}</td>
+                            <td>NULL</td>
+                           
+                        </tr>
+                         {% endfor %}
+                        
+                    </tbody>
+                </table>
+            </div>
+    </div>  
+
+
     </div>
     <script>
         $(document).ready(function(){
