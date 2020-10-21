@@ -154,23 +154,14 @@
                     <tfoot>
                         <tr>
                             <th>IP Address</th>
-                            <th>Hostname</th>
-                            <th>Interface</th>
-                            <th>Satus</th>
-                            <th>Insert Time</th>
-                            
-                           
+                            <th>Mac Address</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        {% for qry in data %} 
+                        {% for qry in data3 %} 
                         <tr>
                             <td><a href="#">{{ qry.ip_hostname }}</a></td>
-                            <td>{{ qry.hostname }}</td>
-                            <td>{{ qry.interface_snmp }}</td>
-                            <td>{{ qry.status_snmp }}</td>
-                            <td>NULL</td>
-                           
+                            <td>{{ qry.mac_address }}</td>
                         </tr>
                          {% endfor %}
                         

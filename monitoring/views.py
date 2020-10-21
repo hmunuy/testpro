@@ -8,6 +8,7 @@ from .models import Host
 from .models import hostname
 from .models import snmp_ap
 from .models import snmp_data
+from .models import snmp_ap_ipmac
 import datetime
 # from .models import snmpdata
 import requests
@@ -78,6 +79,7 @@ def monitor(request):
     #hostname = ['WLC_FITM1','WLC_FITM2','WLC_FITM3']
     #data2 = snmp_ap.objects.all().filter(hostname='WLC_FITM1').order_by('-id')
     data2 = snmp_ap.objects.all()
+    data3 = snmp_ap_ipmac.objects.all()
     
     sum_user = 0
     num_user = 0
@@ -88,7 +90,7 @@ def monitor(request):
  
         
     if username != "" :
-       return render(request,'monitor.html',{'data':data,'data2':x_sum}) 
+       return render(request,'monitor.html',{'data':data,'data2':x_sum},'data3':data3) 
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
