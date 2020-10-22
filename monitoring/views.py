@@ -80,6 +80,7 @@ def monitor(request):
     #data2 = snmp_ap.objects.all().filter(hostname='WLC_FITM1').order_by('-id')
     data2 = snmp_ap.objects.all()
     data3 = snmp_ap_ipmac.objects.all()
+    data4 = in_out.objects.all()
     
     sum_user = 0
     num_user = 0
@@ -90,7 +91,7 @@ def monitor(request):
  
         
     if username != "" :
-       return render(request,'monitor.html',{'data':data,'data2':x_sum,'data3':data3}) 
+       return render(request,'monitor.html',{'data':data,'data2':x_sum,'data3':data3,'data4':data4}) 
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
