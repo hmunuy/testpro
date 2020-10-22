@@ -57,7 +57,15 @@ class snmp_ap_report(models.Model):
 class snmp_ap_ipmac(models.Model):
     ip_hostname = models.CharField(max_length=200)
     mac_address = models.CharField(max_length=200)
+    username = models.CharField(max_length=200)
 
+#Show on Wwb Page IN OUT BOUND  
+class in_out(models.Model):
+    ip_hostname = models.CharField(max_length=200)
+    hostname = models.CharField(max_length=200)
+    interface_in_out = models.CharField(max_length=200)
+    interface_in = models.CharField(max_length=200)
+    interface_out = models.CharField(max_length=200)
 
 
 
