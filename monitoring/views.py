@@ -9,6 +9,7 @@ from .models import hostname
 from .models import snmp_ap
 from .models import snmp_data
 from .models import snmp_ap_ipmac
+from .models import in_out
 import datetime
 # from .models import snmpdata
 import requests
