@@ -153,6 +153,7 @@
                         <tr>
                             <th>IP Address</th>
                             <th>Mac Address</th>
+                            <th>Username</th>
                         </tr>
                        
                     </thead>
@@ -160,6 +161,7 @@
                         <tr>
                             <th>IP Address</th>
                             <th>Mac Address</th>
+                            <th>Username</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -167,6 +169,7 @@
                         <tr>
                             <td><a href="#">{{ qry.ip_hostname }}</a></td>
                             <td>{{ qry.mac_address }}</td>
+                            <td>{{ qry.username }}</td>
                         </tr>
                          {% endfor %}
                         
