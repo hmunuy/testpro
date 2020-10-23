@@ -20,8 +20,7 @@ from monitoring import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index2, name='index'),
-    path('index2/', views.index3, name='index2'),
+    path('', views.index, name='index'),
     path('home/', views.home, name='home'),
     path('monitor/', views.monitor, name='monitor'),
     path('topology/', views.topology, name='page3'),
