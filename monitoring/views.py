@@ -30,6 +30,9 @@ headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'B
 
 def index(request):
     return render(request,'index.html')
+
+def index2(request):
+    return render(request,'index2.html')
 def home(request):
     #Qury Data Show on Table in home.html
     username = request.session['username']
