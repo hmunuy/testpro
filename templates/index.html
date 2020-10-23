@@ -31,12 +31,19 @@
 					<img src="{% static 'images/img-01.png' %}" alt="IMG">
 				</div>
 				{% if messages %}
-				<div class="alert alert-danger" role="alert">
+			
 				{% for message in messages %}
-					{{message}}
+					{{if message == 'ไม่พบข้อมูล'}}
+					<div class="alert alert-danger" role="alert">
+						{{message}}
+					</div>
+					{{else}}
+					<div class="alert alert-success" role="alert">
+					   {{message}}
+					</div>
 
 				{% endfor %}
-				</div>
+				
 				{% endif %}
 				<form class="login100-form validate-form" action="/login" method="POST">
 					{% csrf_token %}
@@ -105,6 +112,10 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="{% static 'js/main.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
 </body>
 </html>
