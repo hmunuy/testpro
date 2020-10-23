@@ -25,7 +25,9 @@
 <body>
 	
 	<div class="limiter">
-		{% if messages %}
+		
+		<div class="container-login100">
+			{% if messages %}
 			
 				{% for message in messages %}
 					
@@ -39,7 +41,6 @@
 				{% endfor %}
 				
 				{% endif %}
-		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="{% static 'images/img-01.png' %}" alt="IMG">
