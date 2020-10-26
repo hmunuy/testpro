@@ -67,8 +67,8 @@ def home(request):
         out_y = qry.interface_out
         sum_in = sum_in + in_x
         sum_out = sum_out + out_y
-    sum_in1 = sum_in
-    sum_out1 = sum_out
+    sum_in1 = str(sum_in)
+    sum_out1 = str(sum_out)
     # x = data.query
     if username != "" :
        return render(request,'home.html',{'data':data,'data2':x_sum,'hostname':data3,'sum_in':sum_in1,'sum_out':sum_out1})
