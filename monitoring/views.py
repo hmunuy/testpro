@@ -32,7 +32,7 @@ def index(request):
     return render(request,'index.html')
 
 def comming(request):
-    return render(request,'http://cptn-project.com/')
+    return render(request,'comming.html')
 
 def index2(request):
     return render(request,'index3.html')
