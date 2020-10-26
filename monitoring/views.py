@@ -56,6 +56,7 @@ def home(request):
     sum_out1 = 0
     in_x = 0
     out_y = 0
+    cal_in = 0
     for qry in data2 :
         num_user = qry.numuser_wlc
         sum_user = sum_user + num_user
@@ -67,7 +68,8 @@ def home(request):
         out_y = qry.interface_out
         sum_in = sum_in + int(in_x)
         sum_out = sum_out + int(out_y)
-    sum_in1 = str(sum_in)
+        cal_in = sum_in/1000
+    sum_in1 = str(cal_in)
     sum_out1 = str(sum_out)
     # x = data.query
     if username != "" :
