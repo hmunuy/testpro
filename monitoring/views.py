@@ -81,7 +81,7 @@ def registeradmin(request):
 
 def monitor(request):
     username = request.session['username']
-    data = snmp_data.objects.values('ip_hostname','hostname','interface_snmp','status_snmp').distinct()
+    data = snmp_data.objects.values('ip_hostname','hostname','interface_snmp','status_snmp','update_time').distinct()
     # x_time = datetime.datetime.now()
     # x_time_sum = x_time.strftime('%d:'+'%A:'+'%B:'+'%Y:'+'%H:'+'%M')
     #hostname = ['WLC_FITM1','WLC_FITM2','WLC_FITM3']
