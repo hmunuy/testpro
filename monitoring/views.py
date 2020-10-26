@@ -71,7 +71,7 @@ def home(request):
         sum_out = sum_out + int(out_y)
         cal_in = sum_in/1073741824
         cal_out = sum_out/1073741824
-    sum_in1 = str(cal_in)
+    sum_in1 = float("{:.2f}".format(str(cal_in)))
     sum_out1 = str(cal_out)
     # x = data.query
     if username != "" :
