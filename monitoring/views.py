@@ -46,8 +46,8 @@ def home(request,sum_in,sum_out):
     data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
     data2 = snmp_ap.objects.all()
     data3 = hostname.objects.all()
-    sum_in = sum_in
-    sum_out = sum_out
+    data4 = in_out.objects.all()
+
     sum_user = 0
     num_user = 0
     for qry in data2 :
@@ -55,9 +55,16 @@ def home(request,sum_in,sum_out):
         sum_user = sum_user + num_user
     x_sum = str(sum_user)
     
+    for qry in data4 :
+        in_x = qry.interface_in
+        out_y = qry.interface_out
+        sum_in = sum_in + in_x
+        sum_out = sum_out + out_y
+    sum_in1 = sum_in
+    sum_out1 = sum_out
     # x = data.query
     if username != "" :
-       return render(request,'home.html',{'data':data,'data2':x_sum,'hostname':data3,'sum_in':sum_in,'sum_out':sum_out})
+       return render(request,'home.html',{'data':data,'data2':x_sum,'hostname':data3,'sum_in':sum_in1,'sum_out':sum_out1})
     else:
         return render(request,'registeradmin.html')
            
