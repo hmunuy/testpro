@@ -50,15 +50,18 @@ def home(request):
 
     sum_user = 0
     num_user = 0
+    sum_out = 0
+    sum_in = 0
+    sum_in1 = 0
+    sum_out1 = 0
+    in_x = 0
+    out_y = 0
     for qry in data2 :
         num_user = qry.numuser_wlc
         sum_user = sum_user + num_user
     x_sum = str(sum_user)
     
-    sum_out = 0
-    sum_in = 0
-    in_x = 0
-    out_y = 0
+    
     for qry in data4 :
         in_x = qry.interface_in
         out_y = qry.interface_out
