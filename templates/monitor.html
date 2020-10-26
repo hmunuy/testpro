@@ -23,7 +23,7 @@
                     <div id="auto">
                           <div class="card-header">
                             <i class="fas fa-chart-area mr-1"></i>
-                            User in Wireless 
+                            Clients in Wireless Lan 
                         </div>
                         <br>
                           <div class="table-responsive">
@@ -107,8 +107,8 @@
                                 <th>IP Address</th>
                                 <th>Hostname</th>
                                 <th>Interface</th>
-                                <th>Satus</th>
-                                <th>Insert Time</th>
+                                <th>Status</th>
+                                <th>Update Time</th>
                             </tr>
                            
                         </thead>
@@ -117,10 +117,8 @@
                                 <th>IP Address</th>
                                 <th>Hostname</th>
                                 <th>Interface</th>
-                                <th>Satus</th>
-                                <th>Insert Time</th>
-                                
-                               
+                                <th>Status</th>
+                                <th>Update Time</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -130,7 +128,7 @@
                                 <td>{{ qry.hostname }}</td>
                                 <td>{{ qry.interface_snmp }}</td>
                                 <td>{{ qry.status_snmp }}</td>
-                                <td>NULL</td>
+                                <td>{{ qry.status_snmp }}</td>
                                
                             </tr>
                              {% endfor %}
@@ -144,7 +142,7 @@
         <div class="card-body">
             <div class="card-header">
                 <i class="fas fa-chart-area mr-1"></i>
-                    IP and Mac Address User in Wireless
+                    Clients in Wireless Lan 
             </div><br>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
@@ -181,7 +179,7 @@
     <div class="card-body">
         <div class="card-header">
             <i class="fas fa-chart-area mr-1"></i>
-                IN Bound & Out Bound
+                Total Inbound & Outbound
         </div><br>
         <div class="table-responsive">
             <table class="table table-bordered table-hover" id="dataTable3" width="100%" cellspacing="0">
@@ -191,8 +189,8 @@
                         <th>IP Address</th>
                         <th>Hostname</th>
                         <th>Interface</th>
-                        <th>IN</th>
-                        <th>OUT</th>
+                        <th>Inbound</th>
+                        <th>Outbound</th>
                     </tr>
                    
                 </thead>
@@ -201,8 +199,8 @@
                         <th>IP Address</th>
                         <th>Hostname</th>
                         <th>Interface</th>
-                        <th>IN</th>
-                        <th>OUT</th>
+                        <th>Inbound</th>
+                        <th>Outbound</th>
                     </tr>
                 </tfoot>
                 <tbody>
