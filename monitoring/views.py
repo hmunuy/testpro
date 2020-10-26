@@ -109,11 +109,11 @@ def monitor(request):
         sum_out = sum_out + out_y
     sum_in1 = sum_in
     sum_out1 = sum_out
- 
+    return redirect('/home/',sum_in1,sum_out1) 
         
     if username != "" :
        return render(request,'monitor.html',{'data':data,'data2':x_sum,'data3':data3,'data4':data4}) 
-       return redirect('/home/',sum_in1,sum_out1) 
+       
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
