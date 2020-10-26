@@ -33,10 +33,9 @@
                                   <form action="/addUser" method="POST">
                                        {% csrf_token %} 
                                         <div class="form-group">
-                                            <div class="input-container">
-                                                <i class="fa fa-user icon"></i>
-                                                <input class="input-field" type="text" placeholder="Username" name="username">
-                                            </div>                                            
+                                            <i class="fa fa-user icon"></i>
+                                            <label class="small mb-1" for="inputEmailAddress">Username</label>
+                                            <input class="form-control py-4" name="username"  id="inputEmailAddress" type="text" placeholder="Enter your username" />
                                         </div>
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">First Name</label>
