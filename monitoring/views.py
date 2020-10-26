@@ -37,7 +37,7 @@ def comming(request):
 
 def index2(request):
     return render(request,'index3.html')
-def home(request,sum_in,sum_out):
+def home(request):
     #Qury Data Show on Table in home.html
     username = request.session['username']
     # data = list(Host.objects.all().distinct())
