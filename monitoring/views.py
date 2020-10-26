@@ -46,7 +46,7 @@ def home(request):
     data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
     data2 = snmp_ap.objects.all()
     data3 = hostname.objects.all()
-    data4 = in_out.objects.filter(interface_in_out='GigabitEthernet0/0/1').exclude(ip_hostname='10.99.0.1')
+    data4 = in_out.objects.filter(ip_hostname='10.99.0.1')
 
     sum_user = 0
     num_user = 0
@@ -65,12 +65,13 @@ def home(request):
     
     
     for qry in data4 :
-        in_x = qry.interface_in
-        out_y = qry.interface_out
-        sum_in = sum_in + int(in_x)
-        sum_out = sum_out + int(out_y)
-        cal_in = float("{:.2f}".format(sum_in/1073741824))
-        cal_out = float("{:.2f}".format(sum_out/1073741824))
+        if qry.interface_in_out == 'GigabitEthernet0/0/1':
+            in_x = qry.interface_in
+            out_y = qry.interface_out
+            sum_in = sum_in + int(in_x)
+            sum_out = sum_out + int(out_y)
+            cal_in = float("{:.2f}".format(sum_in/1073741824))
+            cal_out = float("{:.2f}".format(sum_out/1073741824))
     sum_in1 = str(cal_in)
     sum_out1 = str(cal_out)
     # x = data.query
