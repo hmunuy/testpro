@@ -55,6 +55,10 @@ def home(request):
         sum_user = sum_user + num_user
     x_sum = str(sum_user)
     
+    sum_out = 0
+    sum_in = 0
+    in_x = 0
+    out_y = 0
     for qry in data4 :
         in_x = qry.interface_in
         out_y = qry.interface_out
@@ -105,18 +109,7 @@ def monitor(request):
         sum_user = sum_user + num_user
     x_sum = str(sum_user)
 
-    sum_out = 0
-    sum_in = 0
-    in_x = 0
-    out_y = 0
-    for qry in data4 :
-        in_x = qry.interface_in
-        out_y = qry.interface_out
-        sum_in = sum_in + in_x
-        sum_out = sum_out + out_y
-    sum_in1 = sum_in
-    sum_out1 = sum_out
-    return redirect('/home/',sum_in1,sum_out1) 
+    
         
     if username != "" :
        return render(request,'monitor.html',{'data':data,'data2':x_sum,'data3':data3,'data4':data4}) 
