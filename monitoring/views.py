@@ -29,7 +29,7 @@ headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'B
 #     return render(request,'home.html',{'hostname':data11})
 
 def index(request):
-    return render(request,'index.html')
+    return render(request,'http://cptn-project.com/')
 
 def index2(request):
     return render(request,'index3.html')
