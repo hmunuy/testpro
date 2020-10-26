@@ -37,7 +37,7 @@ def comming(request):
 
 def index2(request):
     return render(request,'index3.html')
-def home(request):
+def home(request,sum_in,sum_out):
     #Qury Data Show on Table in home.html
     username = request.session['username']
     # data = list(Host.objects.all().distinct())
@@ -46,7 +46,8 @@ def home(request):
     data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
     data2 = snmp_ap.objects.all()
     data3 = hostname.objects.all()
-    
+    sum_in = sum_in
+    sum_out = sum_out
     sum_user = 0
     num_user = 0
     for qry in data2 :
@@ -56,7 +57,7 @@ def home(request):
     
     # x = data.query
     if username != "" :
-       return render(request,'home.html',{'data':data,'data2':x_sum,'hostname':data3})
+       return render(request,'home.html',{'data':data,'data2':x_sum,'hostname':data3,'sum_in':sum_in,'sum_out':sum_out})
     else:
         return render(request,'registeradmin.html')
            
@@ -111,7 +112,7 @@ def monitor(request):
         
     if username != "" :
        return render(request,'monitor.html',{'data':data,'data2':x_sum,'data3':data3,'data4':data4}) 
-       return render(request,'home.html',{'sum_in':sum_in,'sum_out':sum_out}) 
+       return render(request,'/home/',sum_in,sum_out) 
     else:
         return render(request,'registeradmin.html')
     return render(request, 'monitor.html', {"username" : username})
