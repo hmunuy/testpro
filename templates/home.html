@@ -30,7 +30,7 @@
             
             <div class="col-sm-4" style="border: 3px;">
                 <div class="spinner-grow text-muted"></div>
-                    <div class="spinner-grow text-primary">ธฎฆธ</div>
+                    <div class="spinner-grow text-primary"></div>
                     <div class="spinner-grow text-success"></div>
                     <div class="spinner-grow text-info"></div>
                     <div class="spinner-grow text-warning"></div>
@@ -38,6 +38,42 @@
                     <div class="spinner-grow text-secondary"></div>
                     <div class="spinner-grow text-dark"></div>
                     <div class="spinner-grow text-light"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Uptime</th>
+                            <th>Insert Time</th>
+                        </tr>
+                       
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Uptime</th>
+                            <th>Insert Time</th>
+                           
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for qry in data %} 
+                        <tr>
+                            <td><a href="#">{{ qry.hostname }}</a></td>
+                            <td>{{ qry.description }}</td>
+                            <td>{{ qry.uptime }}</td>
+                            <td>{{ qry.insert_time }}</td>
+                        </tr>
+                        {% endfor %}
+                        
+                    </tbody>
+                </table>
             </div>
         </div>
         
