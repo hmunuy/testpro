@@ -65,8 +65,8 @@ def home(request):
     for qry in data4 :
         in_x = qry.interface_in
         out_y = qry.interface_out
-        sum_in = sum_in + in_x
-        sum_out = sum_out + out_y
+        sum_in = sum_in + int(in_x)
+        sum_out = sum_out + int(out_y)
     sum_in1 = str(sum_in)
     sum_out1 = str(sum_out)
     # x = data.query
