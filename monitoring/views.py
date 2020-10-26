@@ -69,7 +69,7 @@ def home(request):
         sum_in = sum_in + int(in_x)
         sum_out = sum_out + int(out_y)
         cal_in = sum_in/1000
-    sum_in1 = str(cal_in)
+    sum_in1 = str(sum_in)
     sum_out1 = str(sum_out)
     # x = data.query
     if username != "" :
