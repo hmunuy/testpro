@@ -31,9 +31,6 @@ headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'B
 def index(request):
     return render(request,'index.html')
 
-def comming(request):
-    return render(request,'comming.html')
-
 def index2(request):
     return render(request,'index3.html')
 def home(request):
