@@ -46,7 +46,7 @@ def home(request):
     data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
     data2 = snmp_ap.objects.all()
     data3 = hostname.objects.all()
-    data4 = in_out.objects.annotate(ip_hostname='10.99.0.1').filter(interface_in_out='GigabitEthernet0/0/1')
+    data4 = in_out.objects.filter(interface_in_out='GigabitEthernet0/0/1')
 
     sum_user = 0
     num_user = 0
