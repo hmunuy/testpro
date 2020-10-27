@@ -45,7 +45,7 @@ def home(request):
     # data = Host.objects.all().filter(insert_time='in_time').order_by('-description')
     data = Host.objects.values('hostname','description','uptime','insert_time').distinct()
     data2 = snmp_ap.objects.all()
-    data3 = hostname.objects.raw(SELECT * FROM (SELECT MAX(`insert_time`) as `insert_time`,`id` FROM monitoring_host GROUP BY id ) a LEFT JOIN (SELECT * FROM monitoring_host) b ON a.`insert_time`=b.`insert_time` AND a.`id` = b.`id` GROUP BY b.`id` DESC LIMIT 20)
+    data3 = hostname.objects.all()[:2]
     data4 = in_out.objects.filter(ip_hostname='10.99.0.1')
 
     sum_user = 0
