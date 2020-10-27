@@ -44,7 +44,7 @@ def home(request):
     # in_time = Host.objects.latest('insert_time')
     # data = Host.objects.all().filter(insert_time='in_time').order_by('-description')
     data = Host.objects.order_by("-id")[:20]
-    data2 = snmp_ap.objects.all()
+    data2 = snmp_ap.objects.order_by('-id')[:3]
     data3 = hostname.objects.order_by("-id")[:20]
     data4 = in_out.objects.filter(ip_hostname='10.99.0.1')
 
