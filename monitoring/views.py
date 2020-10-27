@@ -46,7 +46,7 @@ def home(request):
     data = Host.objects.order_by("-id")[:20]
     data2 = snmp_ap.objects.order_by('-id')[:3]
     data3 = hostname.objects.order_by("-id")[:20]
-    data4 = in_out.objects.filter(ip_hostname='10.99.0.1')
+    data4 = in_out.objects.filter(ip_hostname='10.99.0.1').order_by('-id')
 
     sum_user = 0
     num_user = 0
