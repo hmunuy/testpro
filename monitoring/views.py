@@ -108,7 +108,7 @@ def monitor(request):
     #data2 = snmp_ap.objects.all().filter(hostname='WLC_FITM1').order_by('-id')
     data2 = snmp_ap.objects.order_by('-id')[:3]
     data3 = snmp_ap_ipmac.objects.order_by('-id')
-    data4 = in_out.objects.all()
+    data4 = in_out.objects.order_by('-id')
     
     sum_user = 0
     num_user = 0
