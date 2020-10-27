@@ -106,8 +106,8 @@ def monitor(request):
     # x_time_sum = x_time.strftime('%d:'+'%A:'+'%B:'+'%Y:'+'%H:'+'%M')
     #hostname = ['WLC_FITM1','WLC_FITM2','WLC_FITM3']
     #data2 = snmp_ap.objects.all().filter(hostname='WLC_FITM1').order_by('-id')
-    data2 = snmp_ap.objects.all()
-    data3 = snmp_ap_ipmac.objects.all()
+    data2 = snmp_ap.objects.order_by('-id')[:3]
+    data3 = snmp_ap_ipmac.objects.order_by('-id')
     data4 = in_out.objects.all()
     
     sum_user = 0
