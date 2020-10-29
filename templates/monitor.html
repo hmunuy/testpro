@@ -112,9 +112,8 @@
                         <tbody>
                             {% for qry in data %} 
                             <tr>
-                                <td>{{ qry.get_ip_hostname  }}</td>
-                                <td>{{ qry.get_hostname  }}</td>
-                                <td>{{ qry.hostname }}</td>
+                                <td>{{ qry.ip_hostname  }}</td>
+                                <td>{{ qry.hostname  }}</td>
                                 <td>{{ qry.interface  }}</td>
                                 <td>{{ qry.status  }}</td>
                                 <td>{{ qry.update_time  }}</td>
