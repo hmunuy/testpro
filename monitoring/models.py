@@ -2,45 +2,34 @@ from django.db import models
 
 
 # Create your models here.
-class get_hostname(models.Model):
-    hostname = models.CharField(max_length=200)
-
-
-class get_ip_hostname(models.Model):
+class Host(models.Model):
     ip_hostname = models.CharField(max_length=200)
-
+    hostname = models.CharField(max_length=200)
+    update_time = models.CharField(max_length=200)
 
 class get_interface(models.Model):
-    get_ip_hostname = models.ForeignKey(get_ip_hostname, on_delete=models.CASCADE)
-    get_hostname = models.ForeignKey(get_hostname, on_delete=models.CASCADE)
-    # ip_hostname = models.CharField(max_length=200)
-    # hostname = models.CharField(max_length=200)
+    ip_hostname = models.CharField(max_length=200)
+    hostname = models.CharField(max_length=200)
     interface = models.CharField(max_length=200)
     status = models.CharField(max_length=200)
     update_time = models.CharField(max_length=200)
 
 class get_cpu_ram(models.Model):
-    get_ip_hostname = models.ForeignKey(get_ip_hostname, on_delete=models.CASCADE)
-    get_hostname = models.ForeignKey(get_hostname, on_delete=models.CASCADE)
-    # ip_hostname = models.CharField(max_length=200)
-    # hostname = models.CharField(max_length=200)
+    ip_hostname = models.CharField(max_length=200)
+    hostname = models.CharField(max_length=200)
     cpu_temp = models.IntegerField()
     ram_usage = models.IntegerField()
     update_time = models.CharField(max_length=200)
 
 class get_uptime(models.Model):
-    get_ip_hostname = models.ForeignKey(get_ip_hostname, on_delete=models.CASCADE)
-    get_hostname = models.ForeignKey(get_hostname, on_delete=models.CASCADE)
-    # ip_hostname = models.CharField(max_length=200)
-    # hostname = models.CharField(max_length=200)
+    ip_hostname = models.CharField(max_length=200)
+    hostname = models.CharField(max_length=200)
     uptime = models.CharField(max_length=200)
     update_time = models.CharField(max_length=200)
 
 class get_traffic(models.Model):
-    get_ip_hostname = models.ForeignKey(get_ip_hostname, on_delete=models.CASCADE)
-    get_hostname = models.ForeignKey(get_hostname, on_delete=models.CASCADE)
-    # ip_hostname = models.CharField(max_length=200)
-    # hostname = models.CharField(max_length=200)
+    ip_hostname = models.CharField(max_length=200)
+    hostname = models.CharField(max_length=200)
     interface = models.CharField(max_length=200)
     inbound = models.CharField(max_length=200)
     outbound = models.CharField(max_length=200)
