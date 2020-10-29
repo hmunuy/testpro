@@ -8,8 +8,8 @@ class Host(models.Model):
     update_time = models.CharField(max_length=200)
 
 class get_interface(models.Model):
-    ip_hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
-    hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
+    ip_hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
+    hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
     # ip_hostname = models.CharField(max_length=200)
     # hostname = models.CharField(max_length=200)
     interface = models.CharField(max_length=200)
@@ -17,8 +17,8 @@ class get_interface(models.Model):
     update_time = models.CharField(max_length=200)
 
 class get_cpu_ram(models.Model):
-    ip_hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
-    hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
+    ip_hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
+    hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
     # ip_hostname = models.CharField(max_length=200)
     # hostname = models.CharField(max_length=200)
     cpu_temp = models.IntegerField()
@@ -26,16 +26,16 @@ class get_cpu_ram(models.Model):
     update_time = models.CharField(max_length=200)
 
 class get_uptime(models.Model):
-    ip_hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
-    hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
+    ip_hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
+    hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
     # ip_hostname = models.CharField(max_length=200)
     # hostname = models.CharField(max_length=200)
     uptime = models.CharField(max_length=200)
     update_time = models.CharField(max_length=200)
 
 class get_traffic(models.Model):
-    ip_hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
-    hostname = models.ForeignKey(Host, on_delete=models.CASCADE)
+    ip_hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
+    hostname = models.ForeignKey('Host', on_delete=models.CASCADE)
     # ip_hostname = models.CharField(max_length=200)
     # hostname = models.CharField(max_length=200)
     interface = models.CharField(max_length=200)
