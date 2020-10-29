@@ -9,10 +9,6 @@ class get_hostname(models.Model):
 class get_ip_hostname(models.Model):
     ip_hostname = models.CharField(max_length=200)
 
-class Host(models.Model):
-    ip_hostname = models.CharField(max_length=200)
-    hostname = models.CharField(max_length=200)
-    update_time = models.CharField(max_length=200)
 
 class get_interface(models.Model):
     get_ip_hostname = models.ForeignKey(get_ip_hostname, on_delete=models.CASCADE)
