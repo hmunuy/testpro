@@ -93,10 +93,10 @@
                             <tbody>
                                 {% for qry in data %} 
                                 <tr>
-                                    <td><a href="#">{{ qry.hostname }}</a></td>
-                                    <td>{{ qry.description }}</td>
+                                    <td><a href="#">{{ qry.ip_hostname }}</a></td>
+                                    <td>{{ qry.hostname }}</td>
                                     <td>{{ qry.uptime }}</td>
-                                    <td>{{ qry.insert_time }}</td>
+                                    <td>{{ qry.update_time }}</td>
                                 </tr>
                                 {% endfor %}
                                 
