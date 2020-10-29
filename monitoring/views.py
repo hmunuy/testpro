@@ -5,11 +5,12 @@ from django.template import loader
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Host
-from .models import hostname
-from .models import snmp_ap
-from .models import snmp_data
-from .models import snmp_ap_ipmac
-from .models import in_out
+from .models import get_interface
+from .models import get_cpu_ram
+from .models import get_uptime
+from .models import get_traffic
+from .models import get_clients
+from .models import get_clients_detail
 import datetime
 # from .models import snmpdata
 import requests
