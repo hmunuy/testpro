@@ -106,9 +106,9 @@
                           </tr>
                         </thead>
                         <tbody>
-                            {% for x in hostname %}
+                            {% for x in data3 %}
                                 <tr>
-                                    <td>{{ qry.hostname  }}</td>
+                                    <td>{{x.hostname}}</td>
                                     <td><a>{{x.cpu_temp}} °C </a></td>
                                     <td><a>{{x.ram_usage }} Byte</a></td>
                                 </tr>
