@@ -73,8 +73,8 @@
                             <tbody>
                                 {% for qry in data %} 
                                 <tr>
-                                    <td>{{ qry.get_ip_hostname  }}</td>
-                                    <td>{{ qry.get_hostname  }}</td>
+                                    <td>{{ qry.ip_hostname  }}</td>
+                                    <td>{{ qry.hostname  }}</td>
                                     <td>{{ qry.uptime  }}</td>
                                     <td>{{ qry.update_time  }}</td>
                                 </tr>
@@ -108,7 +108,7 @@
                         <tbody>
                             {% for x in hostname %}
                                 <tr>
-                                    <td>{{ qry.get_hostname  }}</td>
+                                    <td>{{ qry.hostname  }}</td>
                                     <td><a>{{x.cpu_temp}} °C </a></td>
                                     <td><a>{{x.ram_usage }} Byte</a></td>
                                 </tr>
