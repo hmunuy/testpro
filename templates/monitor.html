@@ -114,9 +114,9 @@
                             <tr>
                                 <td><a href="#">{{ qry.ip_hostname }}</a></td>
                                 <td>{{ qry.hostname }}</td>
-                                <td>{{ qry.interface_snmp }}</td>
-                                <td>{{ qry.status_snmp }}</td>
-                                <td>No Data</td>
+                                <td>{{ qry.interface  }}</td>
+                                <td>{{ qry.status  }}</td>
+                                <td>{{ qry.update_time  }}</td>
                                
                             </tr>
                              {% endfor %}
@@ -153,7 +153,7 @@
                     <tbody>
                         {% for qry in data3 %} 
                         <tr>
-                            <td><a href="#">{{ qry.ip_hostname }}</a></td>
+                            <td><a href="#">{{ qry.ip_clients  }}</a></td>
                             <td>{{ qry.mac_address }}</td>
                             <td>{{ qry.username }}</td>
                         </tr>
@@ -194,11 +194,11 @@
                 <tbody>
                     {% for qry in data4 %} 
                     <tr>
-                        <td><a href="#">{{ qry.ip_hostname }}</a></td>
+                        <td><a href="#">{{ qry.ip_hostname  }}</a></td>
                         <td>{{ qry.hostname }}</td>
-                        <td>{{ qry.interface_in_out }}</td>
-                        <td>{{ qry.interface_in }} Byte</td>
-                        <td>{{ qry.interface_out }} Byte</td>
+                        <td>{{ qry.interface  }}</td>
+                        <td>{{ qry.inbound  }} Byte</td>
+                        <td>{{ qry.outbound  }} Byte</td>
                     </tr>
                      {% endfor %}
                     

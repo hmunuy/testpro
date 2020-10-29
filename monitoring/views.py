@@ -43,10 +43,10 @@ def home(request):
     # data = list(Host.objects.all().distinct())
     # in_time = Host.objects.latest('insert_time')
     # data = Host.objects.all().filter(insert_time='in_time').order_by('-description')
-    data = Host.objects.order_by("-id")[:20]
-    data2 = snmp_ap.objects.order_by('-id')[:3]
-    data3 = hostname.objects.order_by("-id")[:20]
-    data4 = in_out.objects.filter(ip_hostname='10.99.0.1').order_by('-id')[:5]
+    data = get_uptime.objects.order_by("-id")[:20]
+    data2 = get_clients.objects.order_by('-id')[:3]
+    data3 = get_cpu_ram.objects.order_by("-id")[:20]
+    data4 = get_traffic.objects.filter(ip_hostname='10.99.0.1').order_by('-id')[:5]
 
     sum_user = 0
     num_user = 0
@@ -59,15 +59,15 @@ def home(request):
     cal_in = 0
     cal_out = 0
     for qry in data2 :
-        num_user = qry.numuser_wlc
+        num_user = qry.clients 
         sum_user = sum_user + num_user
     x_sum = str(sum_user)
     
     
     for qry in data4 :
-        if qry.interface_in_out == 'GigabitEthernet0/0/1':
-            in_x = qry.interface_in
-            out_y = qry.interface_out
+        if qry.interface  == 'GigabitEthernet0/0/1':
+            in_x = qry.inbound 
+            out_y = qry.outbound 
             sum_in = sum_in + int(in_x)
             sum_out = sum_out + int(out_y)
             cal_in = float("{:.2f}".format(sum_in/1073741824))
@@ -101,19 +101,19 @@ def registeradmin(request):
 
 def monitor(request):
     username = request.session['username']
-    data = snmp_data.objects.order_by('-id')[:589]
+    data = get_interface.objects.order_by('-id')[:589]
     # x_time = datetime.datetime.now()
     # x_time_sum = x_time.strftime('%d:'+'%A:'+'%B:'+'%Y:'+'%H:'+'%M')
     #hostname = ['WLC_FITM1','WLC_FITM2','WLC_FITM3']
     #data2 = snmp_ap.objects.all().filter(hostname='WLC_FITM1').order_by('-id')
-    data2 = snmp_ap.objects.order_by('-id')[:3]
-    data3 = snmp_ap_ipmac.objects.order_by('-id')
-    data4 = in_out.objects.order_by('-id')[:589]
+    data2 = get_clients.objects.order_by('-id')[:3]
+    data3 = get_clients_detail.objects.order_by('-id')
+    data4 = get_traffic.objects.order_by('-id')[:589]
     
     sum_user = 0
     num_user = 0
     for qry in data2 :
-        num_user = qry.numuser_wlc
+        num_user = qry.clients 
         sum_user = sum_user + num_user
     x_sum = str(sum_user)
 
@@ -148,7 +148,7 @@ def wlc_ap(request):
     username = request.session['username']
     butthon = request.POST['butthon']
     if butthon == 'butthon' :
-        num_wlc = snmp_ap.objects.all().latest
+        num_wlc = get_clients.objects.all().latest
        
         return render(request, 'monitor.html',{'num_wlc':num_wlc})
     else : return redirect('monitor.html')
@@ -194,7 +194,7 @@ def register(request):
     return render(request,'register.html',{'data':data})
 
 def report(request):
-    data1 = list(Host.objects.all().distinct())
+    data1 = list(get_uptime.objects.all().distinct())
     return render(request,'report.html',{'data':data1})
 
 def addUser(request):
